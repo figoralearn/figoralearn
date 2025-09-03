@@ -1,15 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { League_Spartan } from "next/font/google";
+import "@/app/css/globals.css";
+import localFont from "next/font/local";
+import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const LeagueSpartan = League_Spartan({
+	variable: "--font-league-spartan",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const GlacialIndifference = localFont({
+	src: [
+		{
+			path: "../fonts/GlacialIndifference-Regular.otf",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "../fonts/GlacialIndifference-Bold.otf",
+			weight: "700",
+			style: "normal",
+		},
+	],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${LeagueSpartan.variable} ${GlacialIndifference.className} antialiased`}
       >
         {children}
       </body>

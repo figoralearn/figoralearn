@@ -1,4 +1,5 @@
 @theme inline {
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	--color-primary: var(--color-purple);
+	--font-league-spartan: var(--font-league-spartan);
+	--spacing-contain-desktop: 7%;
 }
