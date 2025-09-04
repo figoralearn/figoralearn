@@ -1,5 +1,7 @@
 @theme inline {
-	--color-primary: var(--color-purple);
-	--font-league-spartan: var(--font-league-spartan);
-	--spacing-contain-desktop: 7%;
+  --font-league-spartan: var(--font-league-spartan);
+  --spacing-contain-desktop: 7%;
+  --color-neutral: #fffdf2;
+  --color-primary: var(--color-purple);
+  --color-secondary: var(--color-green);
 }

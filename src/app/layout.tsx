@@ -2,25 +2,26 @@ import type { Metadata } from "next";
 import { League_Spartan } from "next/font/google";
 import "@/app/css/globals.css";
 import localFont from "next/font/local";
-import Header from "@/components/Header";
+import Header from "@/components/shared/Header";
+import DotBackground from "@/components/ui/DotBackground";
 
 const LeagueSpartan = League_Spartan({
-	variable: "--font-league-spartan",
+  variable: "--font-league-spartan",
   subsets: ["latin"],
 });
 const GlacialIndifference = localFont({
-	src: [
-		{
-			path: "../fonts/GlacialIndifference-Regular.otf",
-			weight: "400",
-			style: "normal",
-		},
-		{
-			path: "../fonts/GlacialIndifference-Bold.otf",
-			weight: "700",
-			style: "normal",
-		},
-	],
+  src: [
+    {
+      path: "../fonts/GlacialIndifference-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../fonts/GlacialIndifference-Bold.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -36,8 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-				className={`${LeagueSpartan.variable} ${GlacialIndifference.className} antialiased`}
+        className={`${LeagueSpartan.variable} ${GlacialIndifference.className} bg-neutral relative overflow-clip antialiased`}
       >
+        <DotBackground
+          dotSize={0.08}
+          gapX={2}
+          gapY={2}
+          dotColor="#0000003D"
+          className="absolute inset-0 left-1/2 h-full min-w-7xl -translate-x-1/2"
+        />
+        <Header />
         {children}
       </body>
     </html>
