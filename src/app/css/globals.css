@@ -1,7 +1,6 @@
-@import "./config.css";
+@import "./design-system.css";
 
 /* ==================================== Global rules here ==================================== */
-
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Custom Utilities ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @utility contain {
   @apply lg:px-contain-desktop w-full;
@@ -9,8 +8,14 @@
 @utility button-secondary {
   @apply bg-secondary text-primary;
 }
+@utility button-primary {
+  @apply bg-primary text-white;
+}
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ element defaults ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@layer base {
+}
 h1,
 h2,
 h3,
@@ -22,3 +27,9 @@ h6 {
 button {
   @apply cursor-pointer;
 }
+
+/* body section:first-of-type > :first-child {
+  @apply mt-28;
+} */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
