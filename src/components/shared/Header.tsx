@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 import CloseIcon from "../icons/CloseIcon";
 import DropdownArrowIcon from "../icons/DropdownArrowIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
-import LogoSVG from "./LogoSVG";
+import LogoSVG from "../icons/LogoSVG";
 import SelectWrapper from "./SelectWraper";
 import { getLinks } from "./service";
 import "./styles.css";
-import { LinkItem, MarkerProps } from "../type";
+import { LinkItem, MarkerProps } from "./type";
 import { motion } from "motion/react";
 
 function Marker({
@@ -52,7 +52,7 @@ export default function Header() {
     <motion.div
       initial={{ y: "-100%" }}
       animate={{ y: "0%" }}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1.2, delay: 2 }}
       className={`contain fixed top-0 z-50 pt-8`}
     >
       <header
@@ -104,10 +104,10 @@ export default function Header() {
             )}
           </nav>
 
-          {/* Language & CTA */}
+          {/* CTA */}
           <Link href={"/donate"} className={``}>
             <button
-              className={`header__cta button-secondary flex h-full rounded-full px-7 py-3.5 font-bold`}
+              className={`header__cta button-secondary flex h-full rounded-full px-7 py-3.5`}
             >
               Book Demo
             </button>

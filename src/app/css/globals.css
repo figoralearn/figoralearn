@@ -13,7 +13,20 @@
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-/* ~~~~~~~~~~~~~~~~~~~~~~~~~ element defaults ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ Components (L2) ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@layer components {
+  .btn {
+    @apply font-semibold tracking-wider;
+  }
+  .fadein__right--stagger .stagger {
+    opacity: 0;
+    animation: fadein-right 1s ease-out forwards;
+    animation-delay: calc(0.4s * (var(--i, 1)));
+  }
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ Base (Element Defaults L1) ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @layer base {
 }
 h1,
@@ -24,12 +37,19 @@ h5,
 h6 {
   @apply font-league-spartan;
 }
+
+h1 {
+  @apply tracking-tighter;
+}
+p {
+  @apply leading-relaxed tracking-wide;
+}
 button {
-  @apply cursor-pointer;
+  @apply cursor-pointer font-semibold tracking-wider;
 }
 
-/* body section:first-of-type > :first-child {
-  @apply mt-28;
-} */
+body section:first-of-type > :first-child {
+  @apply mt-32;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

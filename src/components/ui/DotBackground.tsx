@@ -35,10 +35,11 @@ const DotBackground: React.FC<DotBackgroundProps> = ({
     <motion.svg
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      aria-hidden={true}
       transition={{ duration: 1, delay: 1 }}
       viewBox={`0 0 ${width} ${height}`}
       preserveAspectRatio="xMidYMid slice"
-      className={`h-full w-full ${className} `}
+      className={`pointer-events-none -z-10 h-full w-full ${className} `}
     >
       {Array.from({ length: rows }).map((_, row) =>
         Array.from({ length: cols }).map((_, col) => (
