@@ -1,5 +1,9 @@
-import DotBackground from "@/components/ui/DotBackground";
+import HomeHero from "@/components/page/home/HeroHome";
 
 export default function Home() {
-  return <div className="relative h-[100vh] w-full overflow-hidden"></div>;
+  return (
+    <>
+      <HomeHero />
+    </>
+  );
 }
