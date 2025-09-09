@@ -4,6 +4,7 @@ import "@/app/css/globals.css";
 import localFont from "next/font/local";
 import Header from "@/components/shared/Header";
 import DotBackground from "@/components/ui/DotBackground";
+import ReactLenis from "lenis/react";
 
 const LeagueSpartan = League_Spartan({
   variable: "--font-league-spartan",
@@ -36,6 +37,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <ReactLenis root options={{ lerp: 0.06 }} />
       <body
         className={`${LeagueSpartan.variable} ${GlacialIndifference.className} bg-neutral relative overflow-clip antialiased`}
       >
