@@ -1,7 +1,7 @@
 /* ==================================== Themes ==================================== */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Light / Default ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@layer theme {
-  :root {
+:root {
+  @layer theme {
     --color-primary: var(--color-purple);
   }
 }
@@ -9,9 +9,23 @@
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Dark ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @custom-variant dark (&:where(.dark, .dark *));
-@layer theme {
-  .dark {
+/* .dark {
+  @layer theme {
     --color-primary: var(--color-black);
+  }
+} */
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Additional Themes ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.theme-green {
+  @layer theme {
+    --color-primary: var(--color-green);
+  }
+}
+
+.theme-neutral {
+  @layer theme {
+    --color-primary: var(--color-neutral);
   }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
