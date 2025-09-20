@@ -7,6 +7,7 @@ import DotBackground from "@/components/ui/DotBackground";
 import ReactLenis from "lenis/react";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import { themeInitScript } from "@/lib/theme-script";
+import { cookies } from "next/headers";
 
 const HeadingFont = League_Spartan({
   variable: "--font-league-spartan",
@@ -40,13 +41,19 @@ export const viewport: Viewport = {
   // maximumScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const theme = cookieStore.get("theme")?.value || null;
   return (
-    <html lang="en" className="">
+    <html
+      lang="en"
+      className={theme && theme !== "light" ? theme : ""}
+      data-theme={theme || "light"}
+    >
       <head>
         {/* Theme is applied before React hydration */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
