@@ -1,20 +1,21 @@
 import CircleDoodle from "@/components/ui/CircleDoodle";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function HomeHero() {
   return (
     <section className="contain flex min-h-[100vh] flex-col justify-center">
-      <div className="flex">
+      <div className="flex justify-between">
         {/* Content */}
-        <div className="fadein__right--stagger flex flex-col gap-9">
+        <div className="fadein__right--stagger flex flex-col justify-center gap-9">
           {/* Tile */}
-          <h1 className="stagger inline text-8xl font-semibold">
+          <h1 className="stagger inline text-8xl font-bold">
             Shaping{" "}
             <span className="relative">
               <CircleDoodle
                 stroke="#B2DE59"
                 strokeWidth={1}
-                fill="#B2DE59"
+                // fill="#B2DE59"
                 initial={{ pathLength: 0, fillOpacity: -0.3 }}
                 animate={{ pathLength: 1, fillOpacity: 1 }}
                 transition={{ duration: 2, ease: "easeInOut", delay: 1 }}
@@ -34,14 +35,23 @@ export default function HomeHero() {
             role="button"
             type="button"
             href={""}
-            className="button-primary btn stagger w-fit rounded-full px-7 py-3.5 text-2xl [--i:5]"
+            className="button-secondary btn stagger w-fit rounded-full px-7 py-3.5 text-2xl [--i:5]"
           >
             Book A Free Demo
           </Link>
         </div>
 
         {/* Hero Picture */}
-        <div></div>
+        <div className={`hero__image relative flex basis-[40%]`}>
+          <Image
+            src="/hero-image.png"
+            alt="child in program"
+            width={529}
+            height={592}
+            priority
+            className=""
+          />
+        </div>
       </div>
     </section>
   );

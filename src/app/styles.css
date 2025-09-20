@@ -1,0 +1,8 @@
+@reference './css/globals.css';
+
+.hero__image {
+  opacity: 0;
+  @apply animate-fadein duration-200;
+
+  animation-delay: 900ms;
+}

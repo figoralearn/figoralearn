@@ -2,22 +2,25 @@
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Light / Default ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 :root {
   @layer theme {
-    --color-primary: var(--color-purple);
+    --color-primary: var(--color-blue);
+    --color-accent: var(--color-green);
+    --color-secondary: var(--color-purple);
+    --color-neutral: var(--color-off-white);
   }
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Dark ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@custom-variant dark (&:where(.dark, .dark *));
-/* .dark {
+/* @custom-variant dark (&:where(.dark, .dark *));
+.dark {
   @layer theme {
-    --color-primary: var(--color-black);
+    --color-neutral: #000;
   }
 } */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~ Additional Themes ~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-.theme-green {
+/* .theme-green {
   @layer theme {
     --color-primary: var(--color-green);
   }
@@ -27,13 +30,16 @@
   @layer theme {
     --color-primary: var(--color-neutral);
   }
-}
+} */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 /* ==================================== Primitives ==================================== */
 :root {
-  --color-neutral: #fffdf2;
+  --color-off-white: #fffdf2;
   --color-purple: #7d57fd;
   --color-green: #bbe94dff;
+  --color-blue: #4fc9bd;
+  --color-yellow: #fadc5a;
+  --color-red: #fd4b3d;
 }
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

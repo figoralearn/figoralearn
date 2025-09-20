@@ -5,9 +5,11 @@ import localFont from "next/font/local";
 import Header from "@/components/shared/Header";
 import DotBackground from "@/components/ui/DotBackground";
 import ReactLenis from "lenis/react";
-import ThemeToggle from "@/components/ui/ThemeToggle";
+import ThemeToggle from "@/components/shared/ThemeToggle";
 import { themeInitScript } from "@/lib/theme-script";
 import { cookies } from "next/headers";
+import { backgroundGen } from "@/utils/backgroundGen";
+import Footer from "@/components/shared/Footer";
 
 const HeadingFont = League_Spartan({
   variable: "--font-league-spartan",
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = {
   initialScale: 1,
+  width: "device-width",
   // maximumScale: 1,
 };
 
@@ -46,12 +49,18 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const dotBg = backgroundGen({
+    dotSize: 3,
+    gapX: 48,
+    gapY: 48,
+    dotColor: "rgba(0,0,0,0.1)",
+  });
   const cookieStore = await cookies();
   const theme = cookieStore.get("theme")?.value || null;
   return (
     <html
       lang="en"
-      className={theme && theme !== "light" ? theme : ""}
+      // className={theme && theme !== "light" ? theme : ""}
       data-theme={theme || "light"}
     >
       <head>
@@ -60,19 +69,19 @@ export default async function RootLayout({
       </head>
       <ReactLenis root options={{ lerp: 0.06 }} />
       <body
+        style={{
+          backgroundImage: dotBg,
+          backgroundRepeat: "repeat",
+          backgroundPositionX: "4px",
+          // backgroundAttachment: "local",
+        }}
         className={`${HeadingFont.variable} ${BodyFont.className} bg-neutral relative antialiased`}
       >
-        <ThemeToggle />
-        <DotBackground
-          dotSize={0.09}
-          gapX={1.5}
-          gapY={1.5}
-          dotColor="#00000017"
-          className="absolute left-1/2 h-full min-w-[90rem] -translate-x-1/2"
-        />
         <Header />
+        {/* <ThemeToggle /> */}
         <main>{children}</main>
       </body>
+      <Footer />
     </html>
   );
 }

@@ -28,7 +28,7 @@ function Marker({
         className ? className : "items_center justify_center flex"
       } marker ${
         root === link.split("/")[1] ? "marker--active" : ""
-      } cursor_point para_pop relative transition`}
+      } cursor_point relative transition`}
     >
       {children}
     </div>
@@ -52,15 +52,15 @@ export default function Header() {
     <motion.div
       initial={{ y: "-100%" }}
       animate={{ y: "0%" }}
-      transition={{ duration: 1.2, delay: 2 }}
-      className={`contain fixed top-0 z-50 pt-8`}
+      transition={{ duration: 1, delay: 2 }}
+      className={`fixed top-0 left-1/2 z-50 w-full -translate-x-1/2 pt-8`}
     >
       <header
-        className={`header__container bg-primary items_center flex w-full flex-col rounded-full text-white transition-transform ${
-          menuOpen && "rounded-2xl"
+        className={`header__container contain bg-primary items_center flex w-full flex-col rounded-full text-white ${
+          menuOpen && "rounded-lg"
         }`}
       >
-        <div className={`flex h-20 w-full items-center justify-between p-3.5`}>
+        <div className={`flex h-20 w-full items-center justify-between py-3.5`}>
           <Link href={"/"} className={`header__logo relative`}>
             {/* <LogoSVG /> */}
           </Link>
@@ -77,9 +77,11 @@ export default function Header() {
                 >
                   <Marker
                     link={link.link}
-                    className="p-xs flex h-full items-center justify-center"
+                    className="flex h-full items-center justify-center"
                   >
-                    <div>{link.title}</div>
+                    <div>
+                      <p>{link.title}</p>
+                    </div>
                     <DropdownArrowIcon />
                   </Marker>
                   <>
@@ -97,7 +99,7 @@ export default function Header() {
               ) : (
                 <Marker key={index} link={link.link}>
                   <Link href={link.link} className="p-3 text-center">
-                    {link.title}
+                    <p>{link.title}</p>
                   </Link>
                 </Marker>
               ),
@@ -115,7 +117,7 @@ export default function Header() {
 
           {/* Mobile Menu button */}
           <div
-            className={`header__menu-button primary_shade items_center justify_center`}
+            className={`header__menu-button bg-secondary items-center justify-center`}
             onClick={() => setMenuOpen((prev) => !prev)}
           >
             {!menuOpen ? <HamburgerIcon /> : <CloseIcon />}

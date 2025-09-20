@@ -3,20 +3,29 @@
 /* ==================================== Global rules here ==================================== */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Custom Utilities ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @utility contain {
-  @apply lg:px-contain-desktop w-full;
-}
-@utility button-secondary {
-  @apply bg-secondary text-primary;
+  @apply container;
+  @apply mx-auto px-3 transition-[max-width,background-color] duration-300;
 }
 @utility button-primary {
   @apply bg-primary text-white;
 }
+@utility button-secondary {
+  @apply bg-secondary text-white;
+}
+
+@utility card {
+  @apply rounded-2xl;
+}
+
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@layer utilities {
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Components (L2) ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @layer components {
   .btn {
-    @apply font-semibold tracking-wider;
+    @apply font-league-spartan leading-none font-semibold tracking-wider;
   }
   .fadein__right--stagger .stagger {
     opacity: 0;
@@ -28,28 +37,60 @@
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Base (Element Defaults L1) ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @layer base {
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  @apply font-league-spartan;
-}
+  html {
+    @apply overflow-x-hidden;
+  }
+  body {
+    @apply overflow-x-hidden;
+  }
 
-h1 {
-  @apply tracking-tighter;
-}
-p {
-  @apply leading-relaxed tracking-wide;
-}
-button {
-  @apply cursor-pointer font-semibold tracking-wider;
-}
+  * {
+    transition-property: color, background-color, border-color, fill, stroke;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-league-spartan;
+  }
 
-body section:first-of-type > :first-child {
-  @apply mt-32;
+  h1 {
+    @apply tracking-tighter;
+  }
+  h2 {
+    @apply text-6xl font-semibold;
+  }
+  h3 {
+    @apply text-5xl;
+  }
+  p {
+    @apply text-2xl leading-relaxed font-medium tracking-wide;
+  }
+  button {
+    @apply cursor-pointer font-semibold tracking-wider;
+  }
+  section {
+    @apply contain mt-section;
+  }
+  body section:first-of-type {
+    @apply mt-0;
+  }
+  body section:first-of-type > :first-child {
+    @apply mt-32;
+  }
+  section > p {
+    @apply max-w-5xl;
+  }
+}
+@layer utilities {
+  .ytp-title-channel > * {
+    display: none !important;
+    opacity: 0 !important;
+  }
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */

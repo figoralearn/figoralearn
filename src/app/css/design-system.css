@@ -5,17 +5,36 @@
   --font-league-spartan: var(--font-league-spartan);
   --spacing-contain-desktop: 7%;
   --color-primary: var(--color-primary);
-  --color-secondary: var(--color-green);
+  --color-accent: var(--color-accent);
+  --color-red: var(--color-red);
+  --color-yellow: var(--color-yellow);
+  --spacing-section: 10rem;
+  --spacing-sec-block: 4rem;
+  --spacing-sec-block2: 2rem;
+  --color-secondary: var(--color-secondary);
+  --color-neutral: var(--color-neutral);
   --animate-fadein-right: fadein-right 1s ease-out forwards;
+  --animate-fadein: fadein 1s ease-out forwards;
 }
 
-@keyframes fadein-right {
-  from {
-    opacity: 0;
-    transform: translateX(20px);
+@layer theme {
+  @keyframes fadein-right {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
-  to {
-    opacity: 1;
-    transform: translateX(0);
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }
