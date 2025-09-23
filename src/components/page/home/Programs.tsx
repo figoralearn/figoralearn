@@ -54,16 +54,13 @@ export default function Programs() {
 
       <div className="mt-sec-block flex w-full flex-wrap justify-center-safe gap-4">
         {cards.map((card, idx) => (
-          <>
-            {idx === 3 && <br />}
-            <Card
-              key={idx}
-              className={`${card.className} h-72 w-full max-w-[30%] p-3 text-left text-white`}
-            >
-              <h3 className="font-semibold">{card.title}</h3>
-              <p className="tag">{card.tag}</p>
-            </Card>
-          </>
+          <Card
+            key={idx}
+            className={`${card.className} h-72 w-full max-w-[30%] p-3 text-left text-white`}
+          >
+            <h3 className="font-semibold">{card.title}</h3>
+            <p className="tag">{card.tag}</p>
+          </Card>
         ))}
       </div>
     </section>

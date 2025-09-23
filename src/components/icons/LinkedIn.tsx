@@ -1,4 +1,4 @@
-export default function LinkedIn(params) {
+export default function LinkedIn() {
   return (
     <svg
       width="50"
