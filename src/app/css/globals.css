@@ -12,21 +12,26 @@
 @utility button-secondary {
   @apply bg-secondary text-white;
 }
+@utility para {
+  @apply leading-relaxed font-medium tracking-wide max-md:text-lg md:text-2xl;
+}
 
 @utility card {
   @apply rounded-2xl;
 }
-
+/* @utility body-pdd {
+  @apply px-4;
+} */
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 @layer utilities {
 }
+.btn {
+  @apply font-league-spartan text-xl leading-none font-semibold tracking-wider;
+}
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Components (L2) ~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @layer components {
-  .btn {
-    @apply font-league-spartan leading-none font-semibold tracking-wider;
-  }
   .fadein__right--stagger .stagger {
     opacity: 0;
     animation: fadein-right 1s ease-out forwards;
@@ -59,16 +64,16 @@
   }
 
   h1 {
-    @apply tracking-tighter;
+    @apply text-6xl font-bold tracking-tighter md:text-8xl;
   }
   h2 {
-    @apply text-6xl font-semibold tracking-tighter;
+    @apply text-5xl font-semibold tracking-tighter md:text-6xl;
   }
   h3 {
-    @apply text-5xl;
+    @apply text-4xl md:text-5xl;
   }
   p {
-    @apply text-2xl leading-relaxed font-medium tracking-wide;
+    @apply para;
   }
   button {
     @apply cursor-pointer font-semibold tracking-wider;
@@ -80,7 +85,7 @@
     @apply mt-0;
   }
   body section:first-of-type > :first-child {
-    @apply mt-32;
+    @apply mt-28 md:mt-32;
   }
   section > p {
     @apply max-w-5xl;

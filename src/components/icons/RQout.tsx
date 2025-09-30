@@ -5,7 +5,7 @@ export default function RQuot({ className }: { className?: string }) {
       height="25"
       viewBox="0 0 32 25"
       fill="none"
-      className={className}
+      className={`absolute -top-5 -left-10 ${className}`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

@@ -14,9 +14,9 @@ function InCard({ children }: { children: ReactNode }) {
 export default function Stats() {
   return (
     <section className="contain card bg-neutral shadow-accent mt-0 p-4 shadow">
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-x-4">
         <InCard>
-          <p className="text-2xl">
+          <p>
             <span className="text-primary relative inline-block text-6xl font-bold">
               <RQuot className="text-accent absolute -left-8" />
               65%
@@ -25,9 +25,9 @@ export default function Stats() {
             don&apos;t even yet exist.&quot; The world is changing fast
           </p>
         </InCard>
-        <WEF />
+        <WEF className="max-lg:hidden" />
         <InCard>
-          <p className="text-2xl">
+          <p>
             <span className="text-primary text-6xl font-bold">65%</span> <br />{" "}
             <br /> of kids in school today will work in jobs that don&apos;t
             even yet exist. The world is changing fast

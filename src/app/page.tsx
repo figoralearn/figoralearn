@@ -5,6 +5,10 @@ import Capstone from "@/components/page/home/Capstone";
 import Programs from "@/components/page/home/Programs";
 import Missions from "@/components/page/home/Missions";
 import Projects from "@/components/page/home/Projects";
+import TestimonialSection from "@/components/page/home/TestimonialSection";
+import VidSection from "@/components/page/home/VidSection";
+import Groups from "@/components/page/home/Groups";
+import FAQ from "@/components/page/home/FAQ";
 
 export default function Home() {
   return (
@@ -15,7 +19,10 @@ export default function Home() {
       <Programs />
       <Missions />
       <Projects />
-      <div className="h-[100vh] w-full" />
+      <TestimonialSection />
+      <VidSection />
+      <FAQ />
+      {/* <Groups /> */}
     </>
   );
 }

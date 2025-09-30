@@ -43,7 +43,7 @@ export default function Capstone() {
           Creativity, Communication & Collaboration.{" "}
         </p>
 
-        <div className="mt-sec-block grid w-full grid-cols-4 gap-4">
+        <div className="mt-sec-block grid w-full gap-4 max-lg:grid-cols-2 lg:grid-cols-4">
           {cards.map((card, idx) => (
             <Card
               key={idx}
@@ -55,19 +55,21 @@ export default function Capstone() {
             </Card>
           ))}
         </div>
-        <div className="mt-sec-block w-7xl">
+        <div className="mt-sec-block w-7xl max-w-full">
           <YouTubeEmbed
             videoid="Q8qOIhtvUSE"
             params={"controls=0&playsinline=1"}
-            style="margin-inline:auto;object-fit:cover"
+            style="margin-inline:auto;object-fit:cover;"
           />
         </div>
       </section>
-      <ul className="bg-accent mt-sec-block flex w-[100%] origin-center! -rotate-1 justify-around py-2 text-white">
-        <li className="text-3xl">• Build Problem-Solving Skills</li>
-        <li className="text-3xl">• Develop Creativity & Critical Thinking</li>
-        <li className="text-3xl">• Grow as a Leader</li>
-      </ul>
+      <div className="mt-sec-block relative h-3">
+        <ul className="bg-accent absolute left-1/2 flex w-[110%] origin-center! -translate-x-1/2 -rotate-1 justify-around py-2 text-white">
+          <li className="para">• Build Problem-Solving Skills</li>
+          <li className="para">• Develop Creativity & Critical Thinking</li>
+          <li className="para">• Grow as a Leader</li>
+        </ul>
+      </div>
     </>
   );
 }

@@ -1,10 +1,11 @@
-export default function WEF() {
+export default function WEF({ className }: { className?: string }) {
   return (
     <svg
       width="267"
       height="166"
       viewBox="0 0 267 166"
       fill="none"
+      className={className}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

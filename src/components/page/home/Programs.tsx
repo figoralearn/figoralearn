@@ -1,4 +1,3 @@
-import Group1000002612 from "@/components/icons/Group1000002612";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 type Card = {
@@ -56,7 +55,7 @@ export default function Programs() {
         {cards.map((card, idx) => (
           <Card
             key={idx}
-            className={`${card.className} h-72 w-full max-w-[30%] p-3 text-left text-white`}
+            className={`${card.className} h-72 w-full p-3 text-left text-white md:max-w-96`}
           >
             <h3 className="font-semibold">{card.title}</h3>
             <p className="tag">{card.tag}</p>

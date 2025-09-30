@@ -32,7 +32,7 @@ const changes = ["Think Memorize", "Create Imitate", "Lead Follow"];
 export default function Projects() {
   return (
     <section className="bg-primary pt-sec-block pb-sec-block2 w-full max-w-[unset]">
-      <div className="contain flex justify-around">
+      <div className="contain gap-sec-block flex justify-around max-lg:flex-col">
         <div className="flex max-w-2xl flex-col justify-center text-white">
           <h2>
             <SpanSecondary>Capstone</SpanSecondary> Projects
@@ -78,16 +78,16 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="contain mt-sec-block flex justify-between">
+      <div className="contain mt-sec-block flex items-center justify-between max-sm:flex-col">
         {changes.map((change, index) => {
           const arr = change.split(" ");
           return (
             <div
               key={index}
-              className="font-league-spartan flex items-center gap-3 text-5xl font-medium"
+              className="font-league-spartan flex items-center gap-3 text-lg font-medium sm:text-2xl lg:text-5xl"
             >
               <span className="text-white">{arr[0]}</span>
-              <RightArrowDoodle />
+              <RightArrowDoodle className="max-md:size-10" />
               <span className="">{arr[1]}</span>
             </div>
           );

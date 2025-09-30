@@ -122,7 +122,6 @@
 }
 .header__menu {
   pointer-events: none;
-  border-radius: var(--sc-border-radius-medium);
   max-height: 0px;
   opacity: 0;
   width: 100%;
@@ -130,9 +129,7 @@
 }
 .header__menu--open {
   pointer-events: auto;
-  border-radius: var(--sc-border-radius-medium);
-  max-height: 40rem;
-  padding: var(--sc-spacing-xxsmall);
+  max-height: 30rem;
   opacity: 1;
   bottom: 0px;
 }
@@ -236,7 +233,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .card-links__image {
     height: 20rem;
   }
@@ -269,7 +266,7 @@
     width: 100%;
   }
 }
-@media (min-width: 1100px) {
+@media (min-width: 1000px) {
   .header__menu-button {
     display: none;
   }

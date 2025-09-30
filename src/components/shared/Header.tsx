@@ -6,12 +6,14 @@ import { useEffect, useState } from "react";
 import CloseIcon from "../icons/CloseIcon";
 import DropdownArrowIcon from "../icons/DropdownArrowIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
-import LogoSVG from "../icons/LogoSVG";
 import SelectWrapper from "./SelectWraper";
 import { getLinks } from "./service";
 import "./styles.css";
 import { LinkItem, MarkerProps } from "./type";
 import { motion } from "motion/react";
+import { useLenis } from "lenis/react";
+import Image from "next/image";
+import Logo from "../icons/Logo";
 
 function Marker({
   children,
@@ -38,31 +40,65 @@ export default function Header() {
   const path = usePathname();
   const links: LinkItem[] = getLinks();
   const [menuOpen, setMenuOpen] = useState(false);
-  useEffect(() => {
-    setMenuOpen(false);
-    setMobActiveDropdown(null);
-  }, [path]);
-
+  const lenis = useLenis();
+  const [hidden, setHidden] = useState(false);
+  const [lastScroll, setLastScroll] = useState(0);
+  const [hasMounted, setHasMounted] = useState(false); // track initial animation
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
   const [mobActiveDropdown, setMobActiveDropdown] = useState<number | null>(
     null,
   );
 
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobActiveDropdown(null);
+  }, [path]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+    setMobActiveDropdown(null);
+  }, [path]);
+
+  useEffect(() => {
+    if (!lenis) return;
+
+    const handleScroll = ({ scroll }: { scroll: number }) => {
+      if (!hasMounted) return; // ignore scroll until first animation is done
+
+      if (scroll > lastScroll + 7) {
+        setHidden(true); // scrolling down
+      } else if (scroll < lastScroll - 10) {
+        setHidden(false); // scrolling up
+      }
+      setLastScroll(scroll);
+    };
+
+    lenis.on("scroll", handleScroll);
+    return () => {
+      lenis.off("scroll", handleScroll);
+    };
+  }, [lenis, lastScroll, hasMounted]);
+
   return (
     <motion.div
       initial={{ y: "-100%" }}
-      animate={{ y: "0%" }}
-      transition={{ duration: 1, delay: 2 }}
-      className={`fixed top-0 left-1/2 z-50 w-full -translate-x-1/2 pt-8`}
+      animate={{ y: hidden ? "-100%" : "0%" }}
+      transition={{
+        duration: 0.5,
+        ease: "easeInOut",
+        delay: hasMounted ? 0.1 : 2,
+      }}
+      onAnimationComplete={() => setHasMounted(true)} // after first entrance
+      className={`fixed top-0 left-1/2 z-50 w-full -translate-x-1/2 px-3 pt-8`}
     >
       <header
-        className={`header__container contain bg-primary items_center flex w-full flex-col rounded-full text-white ${
-          menuOpen && "rounded-lg"
+        className={`shadow-accent contain bg-primary items_center flex w-full flex-col rounded-[5rem] px-3 text-white shadow transition-all duration-500 ${
+          menuOpen && "rounded-2xl!"
         }`}
       >
         <div className={`flex h-20 w-full items-center justify-between py-3.5`}>
-          <Link href={"/"} className={`header__logo relative`}>
-            {/* <LogoSVG /> */}
+          <Link href={"/"} className={`relative ml-2`}>
+            <Logo className="size-16" />
           </Link>
 
           <nav className={`header__nav flex`}>
@@ -107,9 +143,29 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <Link href={"/donate"} className={``}>
+          <Link
+            href={"/#demo"}
+            className={``}
+            onClick={(e) => {
+              e.preventDefault();
+              const target = document.getElementById("demo");
+              if (!target) return;
+              const headerEl = document.querySelector(
+                ".header__container",
+              ) as HTMLElement | null;
+              const headerHeight = headerEl
+                ? headerEl.getBoundingClientRect().height
+                : 80;
+              const extraTopPadding = 50; // matches pt-8 on the fixed wrapper
+              const offset = -(headerHeight + extraTopPadding);
+              lenis?.scrollTo(target, {
+                offset,
+                duration: 1.5,
+              });
+            }}
+          >
             <button
-              className={`header__cta button-secondary flex h-full rounded-full px-7 py-3.5`}
+              className={`header__cta btn button-secondary flex h-full rounded-full px-7 py-3.5`}
             >
               Book Demo
             </button>
@@ -127,8 +183,8 @@ export default function Header() {
         {/* Mobile Menu*/}
         <nav
           className={`${
-            menuOpen && "header__menu--open"
-          } header__menu justify_center items_center para_pop flex flex-col transition`}
+            menuOpen && "header__menu--open pb-2"
+          } header__menu justify_center items_center para_pop flex flex-col gap-1 transition-all duration-500`}
         >
           {links.map((link, index) =>
             link.sub ? (
@@ -147,13 +203,13 @@ export default function Header() {
                 <div
                   className={` ${
                     mobActiveDropdown === index ? "dropdown--open" : "dropdown"
-                  } gap-xxs flex flex-col transition`}
+                  } flex flex-col transition`}
                 >
                   {link.sub.map((sublink, index) => (
                     <Link
                       key={index}
                       href={`/about/${sublink.link}`}
-                      className={`para txt_default pl-xxs rounded-edges-xs ${
+                      className={`para pl-xxs rounded-edges-xs ${
                         path.split("/")[3] === sublink.link && "selected"
                       }`}
                     >
@@ -163,16 +219,40 @@ export default function Header() {
                 </div>
               </div>
             ) : (
-              <div className="p-xxs flex w-full justify-between" key={index}>
-                <Link href={link.link} className="txt_default w-full">
+              <div
+                className="shadow-accent border-accent flex w-full justify-center border-l-2 py-2"
+                key={index}
+              >
+                <Link
+                  href={link.link}
+                  className="txt_default para flex w-full justify-center"
+                >
                   {link.title}
                 </Link>
               </div>
             ),
           )}
           <Link
-            href={"/donate"}
-            className={`cta primary_shade para_pop pr-md pl-md justify_center text_center mobile_cta flex`}
+            href={"#demo"}
+            onClick={(e) => {
+              e.preventDefault();
+              setMenuOpen(false);
+              const target = document.getElementById("demo");
+              if (!target) return;
+              const headerEl = document.querySelector(
+                ".header__container",
+              ) as HTMLElement | null;
+              const headerHeight = headerEl
+                ? headerEl.getBoundingClientRect().height
+                : 80;
+              const extraTopPadding = 30; // matches pt-8 on the fixed wrapper
+              const offset = -(headerHeight + extraTopPadding);
+              lenis?.scrollTo(target, {
+                offset,
+                duration: 1.5,
+              });
+            }}
+            className={`button-secondary btn mobile_cta flex justify-center text-center`}
           >
             Book Demo
           </Link>

@@ -1,6 +1,11 @@
-export default function RightArrowDoodle() {
+export default function RightArrowDoodle({
+  className,
+}: {
+  className?: string;
+}) {
   return (
     <svg
+      className={className}
       width="49"
       height="48"
       viewBox="0 0 49 48"

@@ -4,12 +4,12 @@ import Link from "next/link";
 
 export default function HomeHero() {
   return (
-    <section className="contain flex min-h-[100vh] flex-col justify-center">
+    <section className="contain flex min-h-[100svh] flex-col justify-center">
       <div className="flex justify-between">
         {/* Content */}
         <div className="fadein__right--stagger flex flex-col justify-center gap-9">
           {/* Tile */}
-          <h1 className="stagger inline text-8xl font-bold">
+          <h1 className="stagger inline">
             Shaping{" "}
             <span className="relative">
               <CircleDoodle
@@ -26,7 +26,7 @@ export default function HomeHero() {
             <br />
             <span className="text-primary"> Thinkers & Leaders.</span>
           </h1>
-          <p className="stagger max-w-2xl text-3xl">
+          <p className="stagger max-w-2xl">
             Weekly Missions on Real World Topics so that your child (Grade 3-8)
             can learn Real World Skills
           </p>
@@ -42,7 +42,7 @@ export default function HomeHero() {
         </div>
 
         {/* Hero Picture */}
-        <div className={`hero__image relative flex basis-[40%]`}>
+        <div className={`hero__image relative flex basis-[40%] max-xl:hidden`}>
           <Image
             src="/hero-image.png"
             alt="child in program"

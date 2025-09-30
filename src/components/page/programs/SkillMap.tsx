@@ -1,0 +1,78 @@
+import Thinking from "@/components/icons/Thinking";
+import Card from "@/components/ui/Card";
+import SpanPrimary from "@/components/ui/SpanPrimary";
+import SpanUnderline from "@/components/ui/SpanUnderline";
+import { ReactNode } from "react";
+
+type SkillItem = {
+  title: string;
+  ico: ReactNode; // Updated to use ReactNode for the icon
+};
+
+type SkillBlock = {
+  title: string;
+  items: SkillItem[];
+};
+
+const blocks: SkillBlock[] = [
+  {
+    title: "Think Smarter:",
+    items: [
+      { title: "Critical thinking", ico: <Thinking /> }, // Example icon
+      { title: "Problem solving", ico: <Thinking /> }, // Example icon
+      { title: "Systems thinking", ico: <Thinking /> }, // Example icon
+    ],
+  },
+  {
+    title: "Lead Confidently:",
+    items: [
+      { title: "Communication", ico: <Thinking /> }, // Example icon
+      { title: "Decision Making", ico: <Thinking /> }, // Example icon
+      { title: "Emotional Intelligence", ico: <Thinking /> }, // Example icon
+    ],
+  },
+  {
+    title: "Build Boldly:",
+    items: [
+      { title: "Creativity", ico: <Thinking /> }, // Example icon
+      { title: "Design Thinking", ico: <Thinking /> }, // Example icon
+      { title: "Collaboration", ico: <Thinking /> }, // Example icon
+    ],
+  },
+];
+
+export default function SkillMap() {
+  return (
+    <section className="contain">
+      <h2 className="text-center">
+        Our <SpanPrimary>Skill Map</SpanPrimary>
+      </h2>
+
+      <div className="mt-sec-block grid w-full grid-cols-1 gap-6 md:grid-cols-3">
+        {blocks.map((block, index) => (
+          <Card
+            key={index}
+            className="border-accent/30 border bg-white p-6 text-center"
+            shadow="accent"
+          >
+            <h3 className="text-left font-semibold">
+              <SpanUnderline color="accent">{block.title}</SpanUnderline>
+            </h3>
+
+            <ul className="mt-sec-block2 para gap-sec-block2 flex flex-wrap justify-center">
+              {block.items.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="flex flex-col items-center justify-center gap-2"
+                >
+                  {item.ico}
+                  <span className="">{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
