@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import CloseIcon from "../icons/CloseIcon";
 import DropdownArrowIcon from "../icons/DropdownArrowIcon";
 import HamburgerIcon from "../icons/HamburgerIcon";
-import SelectWrapper from "./SelectWraper";
+// import SelectWrapper from "./SelectWraper";
 import { getLinks } from "./service";
 import "./styles.css";
 import { LinkItem, MarkerProps } from "./type";
@@ -104,13 +104,14 @@ export default function Header() {
           <nav className={`header__nav flex`}>
             {links.map((link, index) =>
               link.sub ? (
-                <SelectWrapper
-                  key={index}
-                  open={activeDropdown === index}
-                  setOpen={(state: boolean) =>
-                    setActiveDropdown(state ? index : null)
-                  }
-                >
+                // <SelectWrapper
+                //   key={index}
+                //   open={activeDropdown === index}
+                //   setOpen={(state: boolean) =>
+                //     setActiveDropdown(state ? index : null)
+                //   }
+                // >
+                <>
                   <Marker
                     link={link.link}
                     className="flex h-full items-center justify-center"
@@ -131,7 +132,7 @@ export default function Header() {
                       </Link>
                     ))}
                   </>
-                </SelectWrapper>
+                </>
               ) : (
                 <Marker key={index} link={link.link}>
                   <Link href={link.link} className="p-3 text-center">
