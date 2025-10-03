@@ -1,4 +1,5 @@
 import CircleDoodle from "@/components/ui/CircleDoodle";
+import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,14 +19,9 @@ export default function HeroCompete() {
             Entrepreneurship Skills with Prizes worth $1000
           </p>
           {/* CTA */}
-          <Link
-            role="button"
-            type="button"
-            href={""}
-            className="button-secondary btn stagger w-fit rounded-full px-7 py-3.5 text-2xl [--i:5]"
-          >
-            Book A Free Demo
-          </Link>
+          <ScrollToDemoButton className="stagger [--i:5]">
+            Register Now
+          </ScrollToDemoButton>
         </div>
 
         {/* Hero Picture */}

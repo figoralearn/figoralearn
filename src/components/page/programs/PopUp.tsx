@@ -4,6 +4,7 @@ import Lenis from "lenis";
 import { AnimatePresence, motion } from "motion/react";
 import { ReactNode, useEffect, useRef } from "react";
 import CloseIcon from "@/components/icons/CloseIcon";
+import { backgroundGen } from "@/utils/backgroundGen";
 
 type PopUpProps = {
   open: boolean;
@@ -15,6 +16,13 @@ type PopUpProps = {
 export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
   const modalScrollRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
+
+  const dotBg = backgroundGen({
+    dotSize: 2,
+    gapX: 20,
+    gapY: 20,
+    dotColor: "rgba(0,0,0,0.1)",
+  });
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
@@ -68,7 +76,7 @@ export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
             {/* Close button positioned outside the card */}
             <button
               onClick={() => setOpen(false)}
-              className="absolute top-12 right-10 z-[900] flex h-12 w-12 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm transition-all hover:bg-black/45 focus:ring-2 focus:ring-white/50 focus:outline-none"
+              className="absolute top-12 right-5 z-[900] flex h-12 w-12 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm transition-all hover:bg-black/45 focus:ring-2 focus:ring-white/50 focus:outline-none md:right-10"
               aria-label="Close modal"
             >
               <CloseIcon />
@@ -78,6 +86,12 @@ export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
               {/* Inner scroll container */}
               <div
                 ref={modalScrollRef}
+                style={{
+                  backgroundImage: dotBg,
+                  backgroundRepeat: "repeat",
+                  backgroundPositionX: "4px",
+                  // backgroundAttachment: "scroll",
+                }}
                 className="lenis h-full w-full overflow-x-hidden overflow-y-auto"
               >
                 {children}

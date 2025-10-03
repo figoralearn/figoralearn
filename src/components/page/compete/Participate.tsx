@@ -45,7 +45,7 @@ export default function Participate() {
             className="border-accent/30 flex flex-col items-center gap-4 border bg-white p-8 text-center"
             shadow="accent"
           >
-            <div className="text-6xl" aria-hidden>
+            <div className="text" aria-hidden>
               {item.icon}
             </div>
             <h3 className="text-3xl font-semibold">{item.title}</h3>

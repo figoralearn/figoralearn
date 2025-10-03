@@ -1,4 +1,4 @@
-import { Lenis } from "lenis";
+import Lenis from "lenis";
 
 interface ScrollToElementOptions {
   lenis?: Lenis | null;

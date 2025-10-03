@@ -27,21 +27,24 @@ export default function Stats() {
 
   return (
     <section className="contain card bg-neutral shadow-accent mt-0 p-4 shadow">
-      <div className="flex items-center justify-between gap-x-4">
-        {statsData.map((stat, index) => (
-          <>
-            {index === 1 && <WEF className="max-lg:hidden" />}
-            <InCard key={index}>
-              <p>
-                <span className="text-primary relative inline-block text-6xl font-bold">
-                  <RQuot className="text-accent absolute -left-8" />
-                  {stat.quote}
-                </span>{" "}
-                <br /> <br /> {stat.description}
-              </p>
-            </InCard>
-          </>
-        ))}
+      <div className="flex flex-col">
+        <WEF className="mx-auto mb-7 h-24 w-auto lg:hidden" />
+        <div className="flex items-center justify-between gap-x-4">
+          {statsData.map((stat, index) => (
+            <>
+              {index === 1 && <WEF className="max-lg:hidden" />}
+              <InCard key={index}>
+                <p>
+                  <span className="text-primary relative inline-block text-6xl font-bold">
+                    <RQuot className="text-accent absolute -left-8" />
+                    {stat.quote}
+                  </span>{" "}
+                  <br /> <br /> {stat.description}
+                </p>
+              </InCard>
+            </>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -59,7 +59,7 @@ export async function appendEnquiryToGoogleSheet(enquiryData: EnquiryFormDataTyp
       enquiryData.childBoard || 'Not specified',
       enquiryData.childGrade || 'Not specified',
       enquiryData.route || 'Unknown',
-      'Demo Booking',
+      // 'Demo Booking',
       timestamp,
     ];
 
