@@ -26,6 +26,7 @@ const cards: Card[] = [
     link: "/future-leaders",
     className: "bg-yellow",
     imgSrc: "/future_leaders.png", // Added image source
+    pop: <Entrepreneurs />, // Updated to use pop prop as a ReactNode
   },
   {
     title: "EQ Artists",
