@@ -9,9 +9,9 @@ type Group = {
 };
 
 const groups: Group[] = [
-  { gradeRange: "3–4", label: "Explorer", img: "/images/explorer.png" }, // Added img path
-  { gradeRange: "5–6", label: "Innovator", img: "/images/innovator.png" }, // Added img path
-  { gradeRange: "7–8", label: "Trailblazer", img: "/images/trailblazer.png" }, // Added img path
+  { gradeRange: "3&4", label: "Explorer", img: "explorer.png" }, // Added img path
+  { gradeRange: "5&6", label: "Innovator", img: "innovator.png" }, // Added img path
+  { gradeRange: "7&8", label: "Trailblazer", img: "trailblazer.png" }, // Added img path
 ];
 
 export default function Groups() {
@@ -28,7 +28,7 @@ export default function Groups() {
           <Card
             key={idx}
             shadow="accent"
-            className="border-accent/30 flex h-52 flex-col items-center justify-center border bg-white p-10 text-center"
+            className="border-accent/30 flex flex-col items-center justify-center gap-2 border bg-white p-10 text-center"
           >
             <h3 className="font-[BodyFont]">{g.label}</h3>
             <Image
@@ -37,9 +37,9 @@ export default function Groups() {
               width={0}
               alt=""
               src={g.img}
-              className="h-24 w-auto"
+              className="h-36 w-auto md:h-auto"
             />
-            <p>{g.gradeRange}</p>
+            <p>Grades {g.gradeRange}</p>
           </Card>
         ))}
       </div>

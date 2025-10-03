@@ -91,9 +91,19 @@ export default function BuildSkills() {
               {block.items.map((item, idx) => (
                 <li
                   key={idx}
-                  className="flex flex-col items-center justify-center gap-2"
+                  className={`flex flex-col items-center justify-center gap-2`}
                 >
-                  {item.ico}
+                  <div
+                    className={
+                      index === 0
+                        ? "text-primary"
+                        : index === 1
+                          ? "text-yellow"
+                          : "text-red"
+                    }
+                  >
+                    {item.ico}
+                  </div>
                   <span className="">{item.title}</span>
                 </li>
               ))}

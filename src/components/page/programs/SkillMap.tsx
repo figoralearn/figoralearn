@@ -1,3 +1,11 @@
+import Colaboration from "@/components/icons/Colaboration";
+import Commutication from "@/components/icons/Commutication";
+import Creativity from "@/components/icons/Creativity";
+import DecisionMaking from "@/components/icons/DecisionMaking";
+import DesignThinking from "@/components/icons/DesignThinking";
+import EQ from "@/components/icons/EQ";
+import Solving from "@/components/icons/Solving";
+import SysThinking from "@/components/icons/SysThinking";
 import Thinking from "@/components/icons/Thinking";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
@@ -19,24 +27,24 @@ const blocks: SkillBlock[] = [
     title: "Think Smarter:",
     items: [
       { title: "Critical thinking", ico: <Thinking /> }, // Example icon
-      { title: "Problem solving", ico: <Thinking /> }, // Example icon
-      { title: "Systems thinking", ico: <Thinking /> }, // Example icon
+      { title: "Problem solving", ico: <Solving /> }, // Example icon
+      { title: "Systems thinking", ico: <SysThinking /> }, // Example icon
     ],
   },
   {
     title: "Lead Confidently:",
     items: [
-      { title: "Communication", ico: <Thinking /> }, // Example icon
-      { title: "Decision Making", ico: <Thinking /> }, // Example icon
-      { title: "Emotional Intelligence", ico: <Thinking /> }, // Example icon
+      { title: "Communication", ico: <Commutication /> }, // Example icon
+      { title: "Decision Making", ico: <DecisionMaking /> }, // Example icon
+      { title: "Emotional Intelligence", ico: <EQ /> }, // Example icon
     ],
   },
   {
     title: "Build Boldly:",
     items: [
-      { title: "Creativity", ico: <Thinking /> }, // Example icon
-      { title: "Design Thinking", ico: <Thinking /> }, // Example icon
-      { title: "Collaboration", ico: <Thinking /> }, // Example icon
+      { title: "Creativity", ico: <Creativity /> }, // Example icon
+      { title: "Design Thinking", ico: <DesignThinking /> }, // Example icon
+      { title: "Collaboration", ico: <Colaboration /> }, // Example icon
     ],
   },
 ];
@@ -59,7 +67,7 @@ export default function SkillMap() {
               <SpanUnderline color="accent">{block.title}</SpanUnderline>
             </h3>
 
-            <ul className="mt-sec-block2 para gap-sec-block2 flex flex-wrap justify-center">
+            <ul className="mt-sec-block2 para gap-sec-block2 text-primary flex flex-wrap justify-center">
               {block.items.map((item, idx) => (
                 <li
                   key={idx}

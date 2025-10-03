@@ -5,7 +5,6 @@ import Image from "next/image";
 const companies = [
   { src: "/Stanford_emb.png", alt: "Stanford" },
   { src: "/Goldman.png", alt: "Goldman Sachs" },
-  { src: "/Amazon.png", alt: "Amazon" },
   { src: "/BCG.png", alt: "Boston Consulting Group" },
   { src: "/P&G.png", alt: "Procter & Gamble" },
   { src: "/Microsoft.png", alt: "Microsoft" },
@@ -34,7 +33,7 @@ export default function Partners() {
                 alt={image.alt}
                 width={0}
                 height={0}
-                className="h-auto w-auto"
+                className="h-auto w-auto max-md:w-16"
               />
             ))}
           </div>

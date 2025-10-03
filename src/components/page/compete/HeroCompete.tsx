@@ -29,7 +29,7 @@ export default function HeroCompete() {
         </div>
 
         {/* Hero Picture */}
-        <div className={`hero__image relative flex basis-[40%]`}>
+        <div className={`hero__image relative flex basis-[40%] max-xl:hidden`}>
           <Image
             src="/hero-compete.png"
             alt="child in program"

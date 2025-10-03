@@ -1,49 +1,75 @@
+"use client";
 import Card from "@/components/ui/Card";
+import SpanCircle from "@/components/ui/SpanCircle";
 import SpanPrimary from "@/components/ui/SpanPrimary";
-type Card = {
-  title: string;
-  tag: string;
-  link: string;
-  className?: string; // Proper type for React's className attribute
-};
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const cards: Card[] = [
   {
     title: "Entrepreneurs",
+    id: "en", // Shortform for Entrepreneurs
     tag: "Build a Venture",
     link: "/entrepreneurs",
     className: "bg-purple-500",
+    imgSrc: "/entrepreneurs.png", // Added image source
   },
   {
     title: "Future Leaders",
+    id: "fl", // Shortform for Future Leaders
     tag: "Run a Country",
     link: "/future-leaders",
     className: "bg-yellow",
+    imgSrc: "/future_leaders.png", // Added image source
   },
   {
     title: "EQ Artists",
+    id: "eq", // Shortform for EQ Artists
     tag: "Build EQ through the Arts",
     link: "/eq-artists",
     className: "bg-accent",
+    imgSrc: "/eq.png", // Added image source
+    comingSoon: true,
   },
   {
     title: "Story-tellers",
+    id: "st", // Shortform for Story-tellers
     tag: "Give a TED Talk",
     link: "/story-tellers",
     className: "bg-red",
+    imgSrc: "/story_tellers.png", // Added image source
+    comingSoon: true,
   },
   {
     title: "Science Hackers",
+    id: "sh", // Shortform for Science Hackers
     tag: "Conduct your own Experiments",
     link: "/science-hackers",
     className: "bg-primary",
+    imgSrc: "/science_hackers.png", // Added image source
+    comingSoon: true, // Example of a coming soon option
   },
 ];
+
+type Card = {
+  title: string;
+  tag: string;
+  id: string;
+  link: string;
+  className?: string; // Proper type for React's className attribute
+  imgSrc: string; // Added property for image source
+  comingSoon?: boolean; // Optional property to indicate if the program is coming soon
+};
 export default function Programs() {
+  const router = useRouter();
   return (
     <section className="flex flex-col items-center justify-center text-center">
       <h2 className="max-w-3xl">
-        Our <SpanPrimary>Programs</SpanPrimary>
+        Our{" "}
+        <SpanPrimary>
+          <SpanCircle color="accent"> Programs</SpanCircle>
+        </SpanPrimary>
       </h2>
       <p>
         Unique, Inter-disciplinary Missions on 21st century subjects that cover
@@ -55,10 +81,26 @@ export default function Programs() {
         {cards.map((card, idx) => (
           <Card
             key={idx}
-            className={`${card.className} h-72 w-full p-3 text-left text-white md:max-w-96`}
+            onClick={() => {
+              if (!card.comingSoon) {
+                router.push(`/programs?id=${card.id}`);
+              }
+            }}
+            className={`${card.className} ${!card.comingSoon && "cursor-pointer"} relative h-72 w-full overflow-hidden p-3 text-left text-white md:max-w-96`}
           >
-            <h3 className="font-semibold">{card.title}</h3>
-            <p className="tag">{card.tag}</p>
+            <div className="relative z-10">
+              <h3 className="font-semibold">{card.title}</h3>
+              <p className="tag">{card.tag}</p>
+            </div>
+            <Image
+              key={idx}
+              src={card.imgSrc}
+              unoptimized
+              alt={card.title}
+              width={0}
+              height={0}
+              className={`absolute right-0 bottom-0 h-auto w-auto ${card.comingSoon && "blur-[5px]"}`}
+            />
           </Card>
         ))}
       </div>

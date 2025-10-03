@@ -7,7 +7,6 @@ import Missions from "@/components/page/home/Missions";
 import Projects from "@/components/page/home/Projects";
 import TestimonialSection from "@/components/page/home/TestimonialSection";
 import VidSection from "@/components/page/home/VidSection";
-import Groups from "@/components/page/home/Groups";
 import FAQ from "@/components/page/home/FAQ";
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       <TestimonialSection />
       <VidSection />
       <FAQ />
-      {/* <Groups /> */}
     </>
   );
 }

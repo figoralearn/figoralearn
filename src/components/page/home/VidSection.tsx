@@ -51,7 +51,7 @@ export default function VidSection() {
                 alt={image.alt}
                 width={0}
                 height={0}
-                className="h-auto w-auto"
+                className="h-auto w-auto max-md:w-16"
               />
             ))}
           </div>

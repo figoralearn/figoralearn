@@ -14,6 +14,7 @@ import { motion } from "motion/react";
 import { useLenis } from "lenis/react";
 import Image from "next/image";
 import Logo from "../icons/Logo";
+import { scrollToDemo } from "../../utils/scrollToElement";
 
 function Marker({
   children,
@@ -144,27 +145,7 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <Link
-            href={"/#demo"}
-            className={``}
-            onClick={(e) => {
-              e.preventDefault();
-              const target = document.getElementById("demo");
-              if (!target) return;
-              const headerEl = document.querySelector(
-                ".header__container",
-              ) as HTMLElement | null;
-              const headerHeight = headerEl
-                ? headerEl.getBoundingClientRect().height
-                : 80;
-              const extraTopPadding = 50; // matches pt-8 on the fixed wrapper
-              const offset = -(headerHeight + extraTopPadding);
-              lenis?.scrollTo(target, {
-                offset,
-                duration: 1.5,
-              });
-            }}
-          >
+          <Link href={"/#demo"} className={``} onClick={scrollToDemo(lenis)}>
             <button
               className={`header__cta btn button-secondary flex h-full rounded-full px-7 py-3.5`}
             >
@@ -236,22 +217,8 @@ export default function Header() {
           <Link
             href={"#demo"}
             onClick={(e) => {
-              e.preventDefault();
               setMenuOpen(false);
-              const target = document.getElementById("demo");
-              if (!target) return;
-              const headerEl = document.querySelector(
-                ".header__container",
-              ) as HTMLElement | null;
-              const headerHeight = headerEl
-                ? headerEl.getBoundingClientRect().height
-                : 80;
-              const extraTopPadding = 30; // matches pt-8 on the fixed wrapper
-              const offset = -(headerHeight + extraTopPadding);
-              lenis?.scrollTo(target, {
-                offset,
-                duration: 1.5,
-              });
+              scrollToDemo(lenis, 30)(e);
             }}
             className={`button-secondary btn mobile_cta flex justify-center text-center`}
           >

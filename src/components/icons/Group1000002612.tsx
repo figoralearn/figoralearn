@@ -48,7 +48,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
       <g filter="url(#filter4_d_787_2176)">
         <path
           d="M282.766 272C311.465 245.623 349.293 228.99 391 227.326V5C287.714 6.77404 194.143 48.2577 125 114.791L282.766 272Z"
-          fill="#4FC9BD"
+          fill="white"
         />
       </g>
       <g filter="url(#filter5_d_787_2176)">

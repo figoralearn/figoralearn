@@ -168,7 +168,7 @@ export default function FormSection() {
         className="my-sec-block flex flex-col items-center"
         onSubmit={handleSubmit}
       >
-        <div className="grid w-full gap-4 md:w-4xl md:grid-cols-2">
+        <div className="grid w-full max-w-full gap-4 md:w-4xl md:grid-cols-2">
           <InputField
             id="parentName"
             label="Parents Name"

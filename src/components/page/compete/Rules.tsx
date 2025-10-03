@@ -1,5 +1,6 @@
 import ArrowInCircle from "@/components/icons/ArrowInCircle";
 import RightArrowDoodle from "@/components/icons/RightArrowDoodle";
+import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 
 export default function Rules() {
@@ -52,13 +53,7 @@ export default function Rules() {
       </ol>
 
       <div className="mt-sec-block flex w-full justify-center">
-        <a
-          href="/register"
-          className="btn button-secondary flex items-center gap-2 rounded-full px-8 py-4 text-white"
-        >
-          Register Now
-          <ArrowInCircle className="size-8" />
-        </a>
+        <ScrollToDemoButton className="stagger [--i:5]" />
       </div>
     </section>
   );

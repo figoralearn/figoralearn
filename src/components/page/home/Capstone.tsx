@@ -13,19 +13,19 @@ type Card = {
 
 const cards: Card[] = [
   {
-    icon: <Clock className="text-primary" />,
+    icon: <Clock className="text-primary h-auto max-md:w-16" />,
     title: "1 hour/week 3-6 Kids",
   },
   {
-    icon: <Globe className="text-yellow" />,
+    icon: <Globe className="text-yellow h-auto max-md:w-16" />,
     title: "Real World Problems",
   },
   {
-    icon: <Tools className="text-red" />,
+    icon: <Tools className="text-red h-auto max-md:w-16" />,
     title: "Hands-on Projects",
   },
   {
-    icon: <BrainBulb className="text-secondary" />,
+    icon: <BrainBulb className="text-secondary h-auto max-md:w-16" />,
     title: "21st Century Skills",
   },
 ];
@@ -51,7 +51,7 @@ export default function Capstone() {
               className="bg-neutral flex flex-col items-center px-1 py-7"
             >
               <div className="mb-4">{card.icon}</div>
-              <h3 className="text-3xl">{card.title}</h3>
+              <h3 className="">{card.title}</h3>
             </Card>
           ))}
         </div>

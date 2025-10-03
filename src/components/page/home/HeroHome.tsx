@@ -1,6 +1,6 @@
 import CircleDoodle from "@/components/ui/CircleDoodle";
 import Image from "next/image";
-import Link from "next/link";
+import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 
 export default function HomeHero() {
   return (
@@ -31,14 +31,7 @@ export default function HomeHero() {
             can learn Real World Skills
           </p>
           {/* CTA */}
-          <Link
-            role="button"
-            type="button"
-            href={""}
-            className="button-secondary btn stagger w-fit rounded-full px-7 py-3.5 text-2xl [--i:5]"
-          >
-            Book A Free Demo
-          </Link>
+          <ScrollToDemoButton className="stagger [--i:5]" />
         </div>
 
         {/* Hero Picture */}

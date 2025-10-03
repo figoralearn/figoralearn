@@ -50,7 +50,7 @@ export default function ABT() {
                 alt={image.alt}
                 width={0}
                 height={0}
-                className="h-auto w-auto"
+                className="h-auto w-32"
               />
             ))}
           </div>

@@ -46,6 +46,9 @@
     @apply overflow-x-hidden;
   }
   body {
+    &::selection {
+      background-color: rgba(186 233 77 / 0.55);
+    }
     @apply overflow-x-hidden;
   }
 
@@ -70,7 +73,7 @@
     @apply text-5xl font-semibold tracking-tighter md:text-6xl;
   }
   h3 {
-    @apply text-4xl md:text-5xl;
+    @apply text-3xl md:text-4xl;
   }
   p {
     @apply para;
