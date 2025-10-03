@@ -24,6 +24,7 @@ export type EnquiryFormDataType = {
   city: string;
   childBoard?: string;
   childGrade?: string;
+  route?: string;
 };
 
 // ✅ Always generates IST regardless of server's location
@@ -57,6 +58,7 @@ export async function appendEnquiryToGoogleSheet(enquiryData: EnquiryFormDataTyp
       enquiryData.city || '',
       enquiryData.childBoard || 'Not specified',
       enquiryData.childGrade || 'Not specified',
+      enquiryData.route || 'Unknown',
       'Demo Booking',
       timestamp,
     ];

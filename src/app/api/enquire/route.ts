@@ -8,6 +8,7 @@ export interface EnquiryFormData {
   city: string;
   childBoard: string;
   childGrade: string;
+  route: string;
 }
 
 export async function POST(request: NextRequest) {

@@ -65,6 +65,7 @@ export default function FormSection() {
     city: "",
     childBoard: "",
     childGrade: "",
+    route: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -76,6 +77,12 @@ export default function FormSection() {
   const currPath = usePathname();
 
   useEffect(() => {
+    // Set the route in form data
+    setFormData((prevData) => ({
+      ...prevData,
+      route: currPath,
+    }));
+
     switch (currPath) {
       case "/compete":
         setFormHeading(
@@ -140,6 +147,7 @@ export default function FormSection() {
           city: "",
           childBoard: "",
           childGrade: "",
+          route: currPath, // Keep the current route
         });
       } else {
         setSubmitStatus({
