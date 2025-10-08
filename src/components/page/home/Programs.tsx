@@ -35,7 +35,7 @@ const cards: Card[] = [
   {
     title: "Story-tellers",
     id: "st", // Shortform for Story-tellers
-    tag: "Give a TED Talk",
+    tag: "Master storytelling in every medium", // Updated subline
     link: "/story-tellers",
     className: "bg-red",
     imgSrc: "/story_tellers.png", // Added image source
@@ -44,7 +44,7 @@ const cards: Card[] = [
   {
     title: "Science Hackers",
     id: "sh", // Shortform for Science Hackers
-    tag: "Conduct your own Experiments",
+    tag: "Design your own experiments", // Updated subline
     link: "/science-hackers",
     className: "bg-primary",
     imgSrc: "/science_hackers.png", // Added image source
@@ -92,6 +92,18 @@ export default function Programs() {
               <h3 className="font-semibold">{card.title}</h3>
               <p className="tag">{card.tag}</p>
             </div>
+            {card.comingSoon && (
+              <Image
+                key={idx}
+                src={"/comingsoon.png"}
+                unoptimized
+                alt={card.title}
+                width={0}
+                height={0}
+                className={`absolute right-0 bottom-0 z-20 h-auto w-[50%] origin-left -rotate-12`}
+              />
+            )}
+
             <Image
               key={idx}
               src={card.imgSrc}

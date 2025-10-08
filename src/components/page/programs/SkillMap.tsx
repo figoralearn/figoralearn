@@ -67,11 +67,11 @@ export default function SkillMap() {
               <SpanUnderline color="accent">{block.title}</SpanUnderline>
             </h3>
 
-            <ul className="mt-sec-block2 para gap-sec-block2 text-primary flex flex-wrap justify-center">
+            <ul className="mt-sec-block2 para gap-sec-block2 text-primary flex flex-wrap items-center justify-center">
               {block.items.map((item, idx) => (
                 <li
                   key={idx}
-                  className="flex flex-col items-center justify-center gap-2"
+                  className="flex w-full max-w-1/3 flex-col items-center justify-center gap-2"
                 >
                   {item.ico}
                   <span className="">{item.title}</span>

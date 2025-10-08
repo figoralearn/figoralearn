@@ -5,6 +5,8 @@ import Globe from "@/components/icons/Globe";
 import Tools from "@/components/icons/Tools";
 import BrainBulb from "@/components/icons/BrainBulb";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { Marquee } from "@/components/ui/marquee";
+import Plus from "@/components/icons/Plus";
 
 type Card = {
   icon: React.ReactNode;
@@ -34,8 +36,12 @@ export default function Capstone() {
     <>
       <section className="flex flex-col items-center justify-center text-center">
         <h2 className="max-w-3xl">
-          <SpanPrimary>Live</SpanPrimary> Missions Capstone{" "}
-          <SpanPrimary>Projects</SpanPrimary>
+          <SpanPrimary>Live</SpanPrimary>{" "}
+          <span className="relative inline-block">
+            Missions
+            <Plus />
+          </span>{" "}
+          <br /> Capstone <SpanPrimary>Projects</SpanPrimary>
         </h2>
         <p>
           One-of-a-kind Programs with Weekly Live Missions and Projects so that
@@ -55,7 +61,7 @@ export default function Capstone() {
             </Card>
           ))}
         </div>
-        <div className="mt-sec-block w-7xl max-w-full">
+        <div className="mt-sec-block w-7xl max-w-full overflow-hidden rounded-2xl">
           <YouTubeEmbed
             videoid="Q8qOIhtvUSE"
             params={"controls=0&playsinline=1"}
@@ -63,13 +69,11 @@ export default function Capstone() {
           />
         </div>
       </section>
-      <div className="mt-sec-block relative h-3">
-        <ul className="bg-accent absolute left-1/2 flex w-[110%] origin-center! -translate-x-1/2 -rotate-1 justify-around py-2 text-white">
-          <li className="para">• Build Problem-Solving Skills</li>
-          <li className="para">• Develop Creativity & Critical Thinking</li>
-          <li className="para">• Grow as a Leader</li>
-        </ul>
-      </div>
+      {/* <Marquee className="bg-accent mt-sec-block [--gap:3rem]">
+        <p className="para">• Build Problem-Solving Skills</p>
+        <p className="para">• Develop Creativity & Critical Thinking</p>
+        <p className="para">• Grow as a Leader</p>
+      </Marquee> */}
     </>
   );
 }

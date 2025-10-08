@@ -2,20 +2,22 @@
 import Card from "@/components/ui/Card";
 import Lenis from "lenis";
 import { AnimatePresence, motion } from "motion/react";
-import { ReactNode, useEffect, useRef } from "react";
+import { Dispatch, ReactNode, SetStateAction, useEffect, useRef } from "react";
 import CloseIcon from "@/components/icons/CloseIcon";
 import { backgroundGen } from "@/utils/backgroundGen";
+import { useRouter } from "next/navigation";
 
 type PopUpProps = {
   open: boolean;
   children: ReactNode;
-  setOpen: (open: boolean) => void;
+  setOpen: Dispatch<SetStateAction<boolean>>;
   data?: object;
 };
 
 export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
   const modalScrollRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
+  const router = useRouter();
 
   const dotBg = backgroundGen({
     dotSize: 2,
@@ -26,6 +28,7 @@ export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        router.push("/programs");
         setOpen(false);
       }
     };
@@ -75,7 +78,10 @@ export default function PopUp({ open, setOpen, data, children }: PopUpProps) {
           >
             {/* Close button positioned outside the card */}
             <button
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                router.push("/programs");
+                setOpen(false);
+              }}
               className="absolute top-12 right-5 z-[900] flex h-12 w-12 items-center justify-center rounded-full bg-black/30 backdrop-blur-sm transition-all hover:bg-black/45 focus:ring-2 focus:ring-white/50 focus:outline-none md:right-10"
               aria-label="Close modal"
             >

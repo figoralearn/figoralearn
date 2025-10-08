@@ -9,8 +9,8 @@ export default function Why() {
 
       <div className="mt-sec-block">
         <p>
-          The world is changing faster than ever – AI, automation, climate.
-          Education isn’t keeping up.
+          The world is changing faster than ever – AI, automation, climate.{" "}
+          <span className="bg-accent">Education isn’t keeping up.</span>
         </p>
         <p>
           Whether your child becomes an entrepreneur, CEO or changemaker –
@@ -23,11 +23,12 @@ export default function Why() {
           learners.
         </p>
         <p>
-          That’s exactly what Figora missions do. Small groups of students
-          collaborate on genuine, complex problems that matter. Through this
-          process, they learn to structure their thinking, articulate their
-          ideas with confidence, and work effectively with others to create real
-          solutions.
+          That’s exactly{" "}
+          <span className="bg-accent">what Figora missions do.</span> Small
+          groups of students collaborate on genuine, complex problems that
+          matter. Through this process, they learn to structure their thinking,
+          articulate their ideas with confidence, and work effectively with
+          others to create real solutions.
         </p>
       </div>
     </section>

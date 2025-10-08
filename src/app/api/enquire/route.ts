@@ -14,6 +14,7 @@ export interface EnquiryFormData {
 export async function POST(request: NextRequest) {
   try {
     const formData: EnquiryFormData = await request.json();
+  console.log(formData);
 
     // Validate required fields
     const requiredFields = ['parentName', 'phoneNumber', 'email', 'city'];

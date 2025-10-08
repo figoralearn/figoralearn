@@ -5,57 +5,9 @@ import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
 import PopUp from "./PopUp";
 import { ReactNode, useState, useEffect } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Entrepreneurs from "./Entrepreneurs";
 import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
-
-const cards: Card[] = [
-  {
-    title: "Entrepreneurs",
-    id: "en", // Shortform for Entrepreneurs
-    tag: "Build a Venture",
-    link: "/entrepreneurs",
-    className: "bg-purple-500",
-    imgSrc: "/entrepreneurs.png", // Added image source
-    pop: <Entrepreneurs />, // Updated to use pop prop as a ReactNode
-  },
-  {
-    title: "Future Leaders",
-    id: "fl", // Shortform for Future Leaders
-    tag: "Run a Country",
-    link: "/future-leaders",
-    className: "bg-yellow",
-    imgSrc: "/future_leaders.png", // Added image source
-    pop: <Entrepreneurs />, // Updated to use pop prop as a ReactNode
-  },
-  {
-    title: "EQ Artists",
-    id: "eq", // Shortform for EQ Artists
-    tag: "Build EQ through the Arts",
-    link: "/eq-artists",
-    className: "bg-accent",
-    imgSrc: "/eq.png", // Added image source
-    comingSoon: true,
-  },
-  {
-    title: "Story-tellers",
-    id: "st", // Shortform for Story-tellers
-    tag: "Give a TED Talk",
-    link: "/story-tellers",
-    className: "bg-red",
-    imgSrc: "/story_tellers.png", // Added image source
-    comingSoon: true,
-  },
-  {
-    title: "Science Hackers",
-    id: "sh", // Shortform for Science Hackers
-    tag: "Conduct your own Experiments",
-    link: "/science-hackers",
-    className: "bg-primary",
-    imgSrc: "/science_hackers.png", // Added image source
-    comingSoon: true, // Example of a coming soon option
-  },
-];
 
 type Card = {
   title: string;
@@ -73,6 +25,54 @@ export default function HeroPrograms() {
   const [openId, setOpenID] = useState<ReactNode>();
   const searchParams = useSearchParams();
 
+  const cards: Card[] = [
+    {
+      title: "Entrepreneurs",
+      id: "en", // Shortform for Entrepreneurs
+      tag: "Build a Venture",
+      link: "/entrepreneurs",
+      className: "bg-purple-500",
+      imgSrc: "/entrepreneurs.png", // Added image source
+      pop: <Entrepreneurs setOpen={setOpen} />, // Updated to use pop prop as a ReactNode
+    },
+    {
+      title: "Future Leaders",
+      id: "fl", // Shortform for Future Leaders
+      tag: "Run a Country",
+      link: "/future-leaders",
+      className: "bg-yellow",
+      imgSrc: "/future_leaders.png", // Added image source
+      pop: <Entrepreneurs setOpen={setOpen} />, // Updated to use pop prop as a ReactNode
+    },
+    {
+      title: "EQ Artists",
+      id: "eq", // Shortform for EQ Artists
+      tag: "Build EQ through the Arts",
+      link: "/eq-artists",
+      className: "bg-accent",
+      imgSrc: "/eq.png", // Added image source
+      comingSoon: true,
+    },
+    {
+      title: "Story-tellers",
+      id: "st", // Shortform for Story-tellers
+      tag: "Give a TED Talk",
+      link: "/story-tellers",
+      className: "bg-red",
+      imgSrc: "/story_tellers.png", // Added image source
+      comingSoon: true,
+    },
+    {
+      title: "Science Hackers",
+      id: "sh", // Shortform for Science Hackers
+      tag: "Conduct your own Experiments",
+      link: "/science-hackers",
+      className: "bg-primary",
+      imgSrc: "/science_hackers.png", // Added image source
+      comingSoon: true, // Example of a coming soon option
+    },
+  ];
+  const router = useRouter();
   useEffect(() => {
     const id = searchParams.get("id");
     if (id) {
@@ -82,7 +82,7 @@ export default function HeroPrograms() {
         setOpen(true);
       }
     }
-  }, []);
+  }, [searchParams]);
 
   return (
     <>
@@ -107,9 +107,8 @@ export default function HeroPrograms() {
             <Card
               key={idx}
               onClick={() => {
-                if (!card.comingSoon && card.pop) {
-                  setOpenID(card.pop);
-                  setOpen(true);
+                if (!card.comingSoon) {
+                  router.push(`/programs?id=${card.id}`);
                 }
               }}
               className={`${card.className} ${!card.comingSoon && "cursor-pointer"} relative h-72 w-full overflow-hidden p-3 text-left text-white md:max-w-96`}
@@ -118,6 +117,18 @@ export default function HeroPrograms() {
                 <h3 className="font-semibold">{card.title}</h3>
                 <p className="tag">{card.tag}</p>
               </div>
+              {card.comingSoon && (
+                <Image
+                  key={idx}
+                  src={"/comingsoon.png"}
+                  unoptimized
+                  alt={card.title}
+                  width={0}
+                  height={0}
+                  className={`absolute right-0 bottom-0 z-20 h-auto w-[50%] origin-left -rotate-12`}
+                />
+              )}
+
               <Image
                 key={idx}
                 src={card.imgSrc}

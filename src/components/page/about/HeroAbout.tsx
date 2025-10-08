@@ -1,5 +1,7 @@
+import RQuot from "@/components/icons/RQout";
 import CircleDoodle from "@/components/ui/CircleDoodle";
 import SpanPrimary from "@/components/ui/SpanPrimary";
+import SpanUnderline from "@/components/ui/SpanUnderline";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,7 +30,12 @@ export default function HeroAbout() {
               <br />
             </h1>
             <div className="stagger max-w-2xl">
-              <p>The world is changing fast.</p>
+              <p className="relative">
+                <RQuot className="text-accent absolute -left-0" />
+                <SpanUnderline color="accent">
+                  The world is changing fast.
+                </SpanUnderline>
+              </p>
               <br />
               <p>
                 With the shifting Knowledge Landscape of AI, Learners don’t just
@@ -37,7 +44,7 @@ export default function HeroAbout() {
               </p>
               <p>
                 True education isn’t about memorizing facts - it’s about
-                learning How to Think.”
+                learnings <span className="bg-accent">How to Think</span>. ”
               </p>
             </div>
 
@@ -58,14 +65,14 @@ export default function HeroAbout() {
           >
             <Image
               src="/Jyotsna-hero.png"
-              alt="JYOTSNA VARKEY"
+              alt="Jyotsna Varkey"
               width={400}
               height={460}
               priority
               className=""
             />
             <div className="text-primary mt-4 flex flex-col items-center">
-              <h2>JYOTSNA VARKEY</h2>
+              <h2>Jyotsna Varkey</h2>
               <p>Founder, Figora</p>
               <div className="flex gap-2">
                 <Image

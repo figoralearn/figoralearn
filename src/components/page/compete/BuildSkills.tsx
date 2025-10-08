@@ -91,7 +91,7 @@ export default function BuildSkills() {
               {block.items.map((item, idx) => (
                 <li
                   key={idx}
-                  className={`flex flex-col items-center justify-center gap-2`}
+                  className="flex w-full max-w-[40%] flex-col items-center justify-center gap-2"
                 >
                   <div
                     className={

@@ -3,6 +3,7 @@ import { usePathname } from "next/navigation";
 import SpanPrimary from "../ui/SpanPrimary";
 import { useState, ChangeEvent, FormEvent, ReactNode, useEffect } from "react";
 import SpanUnderline from "../ui/SpanUnderline";
+import PhoneNumberInput from "../ui/PhoneNumberInput";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
@@ -63,11 +64,10 @@ export default function FormSection() {
     phoneNumber: "",
     email: "",
     city: "",
-    childBoard: "",
-    childGrade: "",
+    childAge: "",
+    preferredProgram: "",
     route: "",
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<{
     type: "success" | "error" | null;
@@ -84,16 +84,16 @@ export default function FormSection() {
     }));
 
     switch (currPath) {
-      case "/compete":
-        setFormHeading(
-          <>
-            Register for{" "}
-            <SpanPrimary>
-              <SpanUnderline color="accent">WYEL</SpanUnderline>
-            </SpanPrimary>
-          </>,
-        );
-        break;
+      // case "/compete":
+      //   setFormHeading(
+      //     <>
+      //       Register for{" "}
+      //       <SpanPrimary>
+      //         <SpanUnderline color="accent">WYEL</SpanUnderline>
+      //       </SpanPrimary>
+      //     </>,
+      //   );
+      //   break;
       case "/path2":
         setFormHeading("Heading for Path 2");
         break;
@@ -115,6 +115,13 @@ export default function FormSection() {
     setFormData((prevData) => ({
       ...prevData,
       [id]: value,
+    }));
+  };
+
+  const handlePhoneNumberChange = (value: string) => {
+    setFormData((prevData) => ({
+      ...prevData,
+      phoneNumber: value,
     }));
   };
 
@@ -145,8 +152,8 @@ export default function FormSection() {
           phoneNumber: "",
           email: "",
           city: "",
-          childBoard: "",
-          childGrade: "",
+          childAge: "",
+          preferredProgram: "",
           route: currPath, // Keep the current route
         });
       } else {
@@ -173,21 +180,23 @@ export default function FormSection() {
     >
       <h2 className="mt-0">{formHeading}</h2>
       <form
-        className="my-sec-block flex flex-col items-center"
+        className="my-sec-block flex w-full flex-col items-center"
         onSubmit={handleSubmit}
       >
-        <div className="grid w-full max-w-full gap-4 md:w-4xl md:grid-cols-2">
+        <div className="grid w-full grid-cols-1 gap-4 md:w-4xl md:grid-cols-2">
           <InputField
             id="parentName"
-            label="Parents Name"
+            label="Parent's Name"
             placeholder="Your name"
             onChange={handleChange}
           />
-          <InputField
+          <PhoneNumberInput
+            setPhoneNumber={(value) =>
+              setFormData((prev) => ({ ...prev, phoneNumber: value }))
+            }
             id="phoneNumber"
             label="Phone Number"
             placeholder="Your contact number"
-            onChange={handleChange}
           />
           <InputField
             id="email"
@@ -203,28 +212,15 @@ export default function FormSection() {
             onChange={handleChange}
           />
           <SelectField
-            id="childBoard"
-            label="Child's Board"
-            options={["CBSE", "ICSE", "State Board", "IB", "IGCSE", "Other"]}
+            id="childAge"
+            label="Child's Age"
+            options={Array.from({ length: 14 }, (_, i) => (i + 5).toString())} // Ages 5 to 18
             onChange={handleChange}
           />
           <SelectField
-            id="childGrade"
-            label="Child's Grade"
-            options={[
-              "1st Grade",
-              "2nd Grade",
-              "3rd Grade",
-              "4th Grade",
-              "5th Grade",
-              "6th Grade",
-              "7th Grade",
-              "8th Grade",
-              "9th Grade",
-              "10th Grade",
-              "11th Grade",
-              "12th Grade",
-            ]}
+            id="preferredProgram"
+            label="Preferred Program"
+            options={["Entrepreneurs", "Future leaders", "Any"]}
             onChange={handleChange}
           />
         </div>

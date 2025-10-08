@@ -25,9 +25,9 @@ export default function VidSection() {
             <RQuot className="text-accent" />
           </h2>
         </div>
-        <div className="mt-sec-block w-3xl max-w-full">
+        <div className="mt-sec-block w-3xl max-w-full overflow-hidden rounded-2xl">
           <YouTubeEmbed
-            videoid="Q8qOIhtvUSE"
+            videoid="ORvaAq1A-Ak"
             params={"controls=0&playsinline=1"}
             style="margin-inline:auto;object-fit:cover"
           />

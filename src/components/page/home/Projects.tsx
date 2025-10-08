@@ -12,19 +12,19 @@ const points = [
 ];
 const images = [
   {
-    img: "",
+    img: "/venture.jpeg",
     title: "Start a Venture",
   },
   {
-    img: "",
+    img: "/idea.jpeg",
     title: "Pitch your Idea",
   },
   {
-    img: "",
+    img: "/talk.jpeg",
     title: "Give a TED talk",
   },
   {
-    img: "",
+    img: "/launch.jpeg",
     title: "Launch a Social Campaign",
   },
 ];
@@ -58,13 +58,13 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 place-items-center">
+        <div className="grid grid-cols-2 place-content-start gap-y-2 align-top">
           {images.map((image, index) => (
             <div
               key={index}
               className="flex flex-col items-center text-center text-white"
             >
-              <div className="relative size-52 rounded-tl-2xl rounded-br-2xl">
+              <div className="shadow-accent relative size-40 max-w-full overflow-hidden rounded-tl-4xl rounded-br-4xl shadow md:size-52">
                 <Image
                   src={image.img}
                   fill
@@ -78,7 +78,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="contain mt-sec-block flex items-center justify-between max-sm:flex-col">
+      <div className="contain mt-sec-block flex items-center justify-between gap-4 max-sm:flex-col">
         {changes.map((change, index) => {
           const arr = change.split(" ");
           return (
@@ -86,9 +86,13 @@ export default function Projects() {
               key={index}
               className="font-league-spartan flex items-center gap-3 text-lg font-medium sm:text-2xl lg:text-5xl"
             >
-              <span className="text-white">{arr[0]}</span>
+              <span className="inline-block text-white max-sm:w-12">
+                {arr[0]}
+              </span>
               <RightArrowDoodle className="max-md:size-10" />
-              <span className="">{arr[1]}</span>
+              <span className="inline-block text-white max-sm:w-12">
+                {arr[1]}
+              </span>
             </div>
           );
         })}

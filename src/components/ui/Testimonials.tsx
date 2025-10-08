@@ -78,7 +78,9 @@ export const Testimonials = ({
             className="bg-primary absolute inset-0 flex origin-bottom flex-col rounded-2xl p-4 text-white"
           >
             <h2 className="text-3xl">{testimonial.title}</h2>
-            <p className="mt-sec-block2">{testimonial.quote}</p>
+            <p className="mt-3 max-h-[90%] overflow-hidden text-xl hover:overflow-y-scroll">
+              {testimonial.quote}
+            </p>
 
             <div className="mt-auto flex items-center justify-between border-t-2 border-white py-2 pt-4">
               <div className="flex flex-col gap-2">

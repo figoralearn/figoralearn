@@ -1,4 +1,5 @@
 import TestimonialSection from "@/components/page/home/TestimonialSection";
+import DNA from "@/components/page/programs/DNA";
 import HeroPrograms from "@/components/page/programs/HeroPrograms";
 import SkillMap from "@/components/page/programs/SkillMap";
 import Why from "@/components/page/programs/Why";
@@ -9,6 +10,7 @@ export default function Programs() {
       <HeroPrograms />
       <Why />
       <SkillMap />
+      <DNA />
       <TestimonialSection />
     </>
   );
