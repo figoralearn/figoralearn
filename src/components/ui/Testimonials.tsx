@@ -4,8 +4,10 @@
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
 
-import { useEffect, useState } from "react";
+import { RefObject, useEffect, useRef, useState } from "react";
 import ArrowInCircle from "../icons/ArrowInCircle";
+import ReactLenis, { useLenis } from "lenis/react";
+import { useLocalLenis } from "@/hooks/useLocalLenis";
 
 type Testimonial = {
   title: string;
@@ -22,6 +24,9 @@ export const Testimonials = ({
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
+  const lenis = useLenis();
+  const pRef = useRef<HTMLParagraphElement>(null);
+  useLocalLenis(pRef as RefObject<HTMLElement>);
 
   const handleNext = () => {
     setActive((prev) => (prev + 1) % testimonials.length);
@@ -78,7 +83,14 @@ export const Testimonials = ({
             className="bg-primary absolute inset-0 flex origin-bottom flex-col rounded-2xl p-4 text-white"
           >
             <h2 className="text-3xl">{testimonial.title}</h2>
-            <p className="mt-3 max-h-[90%] overflow-hidden text-xl hover:overflow-y-scroll">
+            <p
+              ref={pRef}
+              className="lenis mt-3 max-h-[90%] overflow-hidden text-xl hover:overflow-y-scroll"
+              // onMouseEnter={() => {
+              //   lenis?.;
+              // }}
+              // onMouseLeave={() => lenis?.}
+            >
               {testimonial.quote}
             </p>
 

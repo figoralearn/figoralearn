@@ -69,7 +69,10 @@ export default async function RootLayout({
         {/* Theme is applied before React hydration */}
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <ReactLenis root options={{ lerp: 0.08 }} />
+      <ReactLenis
+        root
+        options={{ lerp: 0.08, autoToggle: true, overscroll: false }}
+      />
       <body
         style={{
           backgroundImage: dotBg,

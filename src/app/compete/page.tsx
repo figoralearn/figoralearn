@@ -6,8 +6,8 @@ import Rules from "@/components/page/compete/Rules";
 import Theme from "@/components/page/compete/Partners";
 import ThreeRounds from "@/components/page/compete/ThreeRounds";
 import Groups from "@/components/page/home/Groups";
-import FAQ from "@/components/page/home/FAQ";
 import Timeline from "@/components/page/compete/Timeline";
+import FAQWYEL from "@/components/page/compete/FAQWYEL";
 
 export default function Compete() {
   return (
@@ -21,7 +21,7 @@ export default function Compete() {
       <Theme />
       <Rules />
       <BuildSkills />
-      <FAQ />
+      <FAQWYEL />
     </>
   );
 }

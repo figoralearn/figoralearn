@@ -8,6 +8,7 @@ import { ReactNode, useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Entrepreneurs from "./Entrepreneurs";
 import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
+import FutureLeaders from "./FutureLeaders";
 
 type Card = {
   title: string;
@@ -42,7 +43,7 @@ export default function HeroPrograms() {
       link: "/future-leaders",
       className: "bg-yellow",
       imgSrc: "/future_leaders.png", // Added image source
-      pop: <Entrepreneurs setOpen={setOpen} />, // Updated to use pop prop as a ReactNode
+      pop: <FutureLeaders setOpen={setOpen} />, // Updated to use pop prop as a ReactNode
     },
     {
       title: "EQ Artists",

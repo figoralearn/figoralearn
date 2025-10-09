@@ -8,12 +8,14 @@ import Card from "@/components/ui/Card";
 import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import { MouseEventHandler } from "react";
 import EnJourneyMob from "./EnJourneyMob";
+import FLJourney from "./FLJourney";
+import FLJourneyMob from "./FLJourneyMob";
 
 interface EntrepreneursProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
+export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
   return (
     <div className="pb-section">
       <section className="contain flex min-h-[100svh] flex-col justify-center">
@@ -22,7 +24,7 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
           <div className="fadein__right--stagger flex flex-col justify-center">
             {/* Tile */}
             <h1 className="stagger inline">
-              <SpanPrimary>Entrepreneurs </SpanPrimary>
+              <SpanPrimary>Future Leaders</SpanPrimary>
             </h1>
             <p className="stagger head2">Age 8-14</p>
             <div className="flex gap-2">
@@ -73,8 +75,8 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
       <EnCards />
       <section className="mb-sec-block flex justify-center">
         <div className="relative">
-          <EnJourney className="hidden h-auto w-[140%] max-lg:-translate-x-16 md:block md:w-full" />
-          <EnJourneyMob className="h-auto w-full md:hidden" />
+          <FLJourney className="hidden h-auto w-[140%] max-lg:-translate-x-16 md:block md:w-full" />
+          <FLJourneyMob className="h-auto w-full md:hidden" />
         </div>
       </section>
 

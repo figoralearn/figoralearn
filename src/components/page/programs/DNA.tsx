@@ -4,10 +4,13 @@ import Image from "next/image";
 
 const images = {
   g1: [
-    { src: "", imgclass: "h-64!" },
-    { src: "", imgclass: "" },
+    { src: "/dna-1.jpg", imgclass: "h-64!" },
+    { src: "/dna-2.jpg", imgclass: "" },
   ],
-  g2: [{ src: "", imgclass: "" }],
+  g2: [
+    { src: "/dna-3.jpg", imgclass: "h-64!" },
+    { src: "/dna-4.jpg", imgclass: "" },
+  ],
 };
 export default function DNA() {
   return (
@@ -40,7 +43,7 @@ export default function DNA() {
           </div>
           <DNASVG className="h-auto w-full max-w-lg max-lg:hidden" />
           <div className="flex flex-col gap-4">
-            {images.g1.map((image, index) => (
+            {images.g2.map((image, index) => (
               <div
                 key={index}
                 className={`shadow-accent relative size-40 max-w-full overflow-hidden rounded-tl-4xl rounded-br-4xl shadow md:size-52 ${image.imgclass}`}
