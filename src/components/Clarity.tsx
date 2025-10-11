@@ -1,30 +1,36 @@
+// src/components/Clarity.tsx
 "use client";
 
 import Script from "next/script";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
+// ✅ Declare the Clarity API globally
+declare global {
+  interface Window {
+    clarity?: (...args: unknown[]) => void;
+  }
+}
+
 export default function Clarity() {
-  const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID;
+  const CLARITY_ID = process.env.NEXT_PUBLIC_CLARITY_ID!;
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // Only in production
-  if (process.env.NODE_ENV !== "production" || !CLARITY_ID) return null;
-
-  // Inject the clarity script
   useEffect(() => {
+    if (process.env.NODE_ENV !== "production" || !CLARITY_ID) return;
+
     const query = searchParams?.toString();
     const url = pathname + (query ? `?${query}` : "");
 
-    // Tell Clarity a "page view" happened
-    if (typeof window !== "undefined" && (window as any).clarity) {
-      (window as any).clarity("pageview");
+    // ✅ Call clarity safely only if defined
+    if (typeof window !== "undefined" && typeof window.clarity === "function") {
+      window.clarity("set", "page", url);
+      window.clarity("pageview");
     }
+  }, [pathname, searchParams, CLARITY_ID]);
 
-    // Optionally, you could also log route info
-    // (window as any).clarity("set", "page", url);
-  }, [pathname, searchParams]);
+  if (process.env.NODE_ENV !== "production" || !CLARITY_ID) return null;
 
   return (
     <Script
