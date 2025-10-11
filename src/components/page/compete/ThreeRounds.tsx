@@ -5,7 +5,7 @@ type Round = {
   heading: string;
   sub: string;
   desc: string;
-  link: { href: string; label: string };
+  link?: { href: string; label: string };
 };
 
 const rounds: Round[] = [
@@ -13,19 +13,25 @@ const rounds: Round[] = [
     heading: "Round 1",
     sub: "Entrepreneurship Quiz",
     desc: "Covers Problem Identification, Ideation, Decision Making, First Principle Thinking, etc.",
-    link: { href: "#", label: "Our Free Guide Available for Download" },
+    link: {
+      href: "https://drive.google.com/file/d/1mVkTbTTyRCPJpmTRVB2FRDoCMIkIZwjg/view?usp=sharing",
+      label: "Our Free Guide Available for Download",
+    },
   },
   {
     heading: "Round 2",
     sub: "Business Proposal",
     desc: "Identify a problem and create a Business Proposal and a Video Pitch for it",
-    link: { href: "#", label: "Free Business Plan Template for Download" },
+    link: {
+      href: "https://drive.google.com/file/d/1mVkTbTTyRCPJpmTRVB2FRDoCMIkIZwjg/view?usp=sharing",
+      label: "Free Business Plan Template for Download",
+    },
   },
   {
     heading: "Round 3",
     sub: "Pitching Competition",
     desc: "Short‑listed teams present a Pitch Deck (6–8 slides) live to the jury and audience and take Q&A.",
-    link: { href: "#", label: "Followed by an award ceremony" },
+    // link: { href: "#", label: "Followed by an award ceremony" },
   },
 ];
 
@@ -51,12 +57,14 @@ export default function ThreeRounds() {
             >
               {r.desc}
             </p>
-            <a
-              href={r.link.href}
-              className="mt-sec-block2 text-accent inline-block underline"
-            >
-              {r.link.label}
-            </a>
+            {r.link && (
+              <a
+                href={r.link.href}
+                className="mt-sec-block2 para text-accent inline-block underline"
+              >
+                {r.link.label}
+              </a>
+            )}
           </Card>
         ))}
       </div>

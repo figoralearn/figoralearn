@@ -145,13 +145,28 @@ export default function Header() {
           </nav>
 
           {/* CTA */}
-          <Link href={"/#demo"} className={``} onClick={scrollToDemo(lenis)}>
-            <button
-              className={`header__cta btn button-secondary flex h-full rounded-full px-7 py-3.5`}
+          {path === "/compete" ? (
+            <Link
+              href="https://unstop.com/competitions/1563749/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={``}
             >
-              Book Demo
-            </button>
-          </Link>
+              <button
+                className={`header__cta btn button-secondary flex h-full rounded-full px-7 py-3.5`}
+              >
+                Register now
+              </button>
+            </Link>
+          ) : (
+            <Link href={"/#demo"} className={``} onClick={scrollToDemo(lenis)}>
+              <button
+                className={`header__cta btn button-secondary flex h-full rounded-full px-7 py-3.5`}
+              >
+                Book Demo
+              </button>
+            </Link>
+          )}
 
           {/* Mobile Menu button */}
           <div
@@ -214,16 +229,27 @@ export default function Header() {
               </div>
             ),
           )}
-          <Link
-            href={"#demo"}
-            onClick={(e) => {
-              setMenuOpen(false);
-              scrollToDemo(lenis, 30)(e);
-            }}
-            className={`button-secondary btn mobile_cta flex justify-center text-center`}
-          >
-            Book Demo
-          </Link>
+          {path === "/compete" ? (
+            <Link
+              href="https://unstop.com/competitions/1563749/register"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`button-secondary btn mobile_cta flex justify-center text-center`}
+            >
+              Register Now
+            </Link>
+          ) : (
+            <Link
+              href={"#demo"}
+              onClick={(e) => {
+                setMenuOpen(false);
+                scrollToDemo(lenis, 30)(e);
+              }}
+              className={`button-secondary btn mobile_cta flex justify-center text-center`}
+            >
+              Book Demo
+            </Link>
+          )}
         </nav>
       </header>
     </motion.div>

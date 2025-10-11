@@ -3,10 +3,12 @@ import { useLenis } from "lenis/react";
 import { scrollToDemo } from "@/utils/scrollToElement";
 import ArrowInCircle from "@/components/icons/ArrowInCircle";
 import { ReactNode } from "react";
+import Link from "next/link";
 
 interface ScrollToDemoButtonProps {
   children?: ReactNode;
   className?: string;
+  href?: string;
   extraTopPadding?: number;
   showArrow?: boolean;
   variant?: "primary" | "secondary";
@@ -16,6 +18,7 @@ interface ScrollToDemoButtonProps {
 export default function ScrollToDemoButton({
   children = "Book A Demo",
   className = "",
+  href,
   extraTopPadding = 50,
   showArrow = true,
   variant = "secondary",
@@ -45,9 +48,16 @@ export default function ScrollToDemoButton({
 
   const combinedClassName = `${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`;
 
-  return (
+  return href ? (
+    <Link href={href} target="_blank" rel="noopener noreferrer">
+      <div className={combinedClassName}>
+        {children}
+        {showArrow && <ArrowInCircle className={arrowSizes[size]} />}
+      </div>
+    </Link>
+  ) : (
     <button
-      onClick={scrollToDemo(lenis, extraTopPadding)}
+      onClick={() => scrollToDemo(lenis, extraTopPadding)}
       className={combinedClassName}
     >
       {children}

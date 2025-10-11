@@ -53,7 +53,12 @@ export default function Rules() {
       </ol>
 
       <div className="mt-sec-block flex w-full justify-center">
-        <ScrollToDemoButton className="stagger [--i:5]" />
+        <ScrollToDemoButton
+          href="https://unstop.com/competitions/1563749/register"
+          className="relative mx-auto mt-5 mb-12 border-2 border-white bg-[#a9d346] text-white"
+        >
+          Register Now
+        </ScrollToDemoButton>{" "}
       </div>
     </section>
   );

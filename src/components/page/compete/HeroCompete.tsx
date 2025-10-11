@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export default function HeroCompete() {
   return (
-    <section className="relative mt-0! flex h-[85vh] min-h-[700px] w-full max-w-[unset] flex-col p-[unset]">
+    <section className="relative mt-0! flex h-[85vh] min-h-[750px] w-full max-w-[unset] flex-col p-[unset] md:min-h-[850px]">
       <Image
         src={"/compete-hero.png"}
         fill
@@ -17,7 +17,7 @@ export default function HeroCompete() {
         alt="background with clouds"
         className="pointer-events-none mt-0 object-cover object-center"
       />
-      <div className="contain relative flex h-full w-full flex-col items-center justify-end pb-14">
+      <div className="contain relative flex h-full w-full flex-col items-center justify-end">
         <div className="relative -rotate-2">
           <Image
             src={"/ribbon-left.png"}
@@ -25,7 +25,7 @@ export default function HeroCompete() {
             unoptimized
             height={0}
             width={0}
-            className="absolute top-1/2 left-0 z-10 h-auto w-[25vw] -translate-x-3/5 -translate-y-1/2"
+            className="absolute top-1/2 left-0 z-10 h-auto w-52 -translate-x-3/5 -translate-y-1/2 md:w-[25vw]"
           />
           <Image
             src={"/ribbon-right.png"}
@@ -33,12 +33,20 @@ export default function HeroCompete() {
             unoptimized
             height={0}
             width={0}
-            className="absolute top-1/2 right-0 z-10 h-auto w-[25vw] translate-x-3/5 -translate-y-1/2"
+            className="absolute top-1/2 right-0 z-10 h-auto w-52 translate-x-3/5 -translate-y-1/2 md:w-[25vw]"
           />
           <Card
             shadow="accent"
-            className="bg-primary relative z-30 flex w-sm flex-col items-center border-4 border-white p-6 md:w-xl lg:w-2xl"
+            className="bg-primary relative z-30 flex w-72 flex-col items-center border-4 border-white p-2 pt-8 sm:p-6 md:w-xl lg:w-2xl"
           >
+            <Image
+              src={"/wyel-stamp.png"}
+              alt=""
+              unoptimized
+              height={0}
+              width={0}
+              className="absolute top-0 left-1/2 z-40 h-auto w-32 -translate-x-1/2 -translate-y-4/5 md:w-40"
+            />
             <h1 className="text-center text-4xl text-white md:text-5xl lg:text-7xl">
               World Young Entrepreneur League
             </h1>
@@ -47,13 +55,18 @@ export default function HeroCompete() {
             </p>
           </Card>
         </div>
-        <ScrollToDemoButton className="mt-20" />
       </div>
-      <Marquee className="bg-primary mt-sec-block relative mb-6 [--gap:3rem]">
+      <Marquee className="bg-primary xl:mt-sec-block mt-sec-block2 relative mb-6 -rotate-2 text-white [--gap:3rem]">
         <p className="para">• Friends to Co-founders</p>
         <p className="para">• Ideas to Real Startups</p>
-        <p className="para">• Classroom to the Global Stager</p>
+        <p className="para">• Classroom to the Global Stage</p>
       </Marquee>
+      <ScrollToDemoButton
+        href="https://unstop.com/competitions/1563749/register"
+        className="relative mx-auto mt-5 mb-12 border-2 border-white bg-[#a9d346] text-white"
+      >
+        Register Now
+      </ScrollToDemoButton>
       {/* <div className="bg-primary relative mb-7">
         <p className="text-center">
           Friends to Co-founders. Ideas to Real Startups. Classroom to the
