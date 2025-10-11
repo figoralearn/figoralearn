@@ -241,7 +241,7 @@ export default function FormSection() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className={`button-secondary mt-sec-block2 para w-sm rounded-full p-3 ${
+          className={`button-secondary mt-sec-block2 para w-full max-w-sm rounded-full p-3 ${
             isSubmitting ? "cursor-not-allowed opacity-50" : ""
           }`}
         >

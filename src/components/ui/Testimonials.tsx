@@ -85,7 +85,7 @@ export const Testimonials = ({
             <h2 className="text-3xl">{testimonial.title}</h2>
             <p
               ref={pRef}
-              className="lenis mt-3 max-h-[90%] overflow-hidden text-xl hover:overflow-y-scroll"
+              className="lenis mt-3 max-h-[90%] overflow-hidden text-lg hover:overflow-y-scroll"
               // onMouseEnter={() => {
               //   lenis?.;
               // }}

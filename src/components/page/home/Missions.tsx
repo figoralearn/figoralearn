@@ -10,7 +10,7 @@ export default function Missions() {
     <>
       <section className="flex flex-col items-center justify-center text-center">
         <h2 className="max-w-3xl">
-          How our <SpanPrimary>Missions</SpanPrimary> work
+          How Our <SpanPrimary>Missions</SpanPrimary> Work
         </h2>
         <p>
           Here’s why our Live Missions are a{" "}

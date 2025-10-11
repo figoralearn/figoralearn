@@ -6,8 +6,10 @@ export interface EnquiryFormData {
   phoneNumber: string;
   email: string;
   city: string;
-  childBoard: string;
-  childGrade: string;
+  // childBoard: string;
+  // childGrade: string;
+  childAge: string,
+  preferredProgram: string,
   route: string;
 }
 

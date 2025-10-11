@@ -21,15 +21,15 @@ export default function VidSection() {
       <section className="contain flex items-center justify-around max-lg:flex-col">
         <div>
           <h2 className="relative max-w-lg">
-            Here’s what our Wonderful <SpanPrimary>Learners</SpanPrimary> think:
+            Here’s What Our Wonderful <SpanPrimary>Learners</SpanPrimary> Think:
             <RQuot className="text-accent" />
           </h2>
         </div>
-        <div className="mt-sec-block w-3xl max-w-full overflow-hidden rounded-2xl">
+        <div className="mt-sec-block w-3xl max-w-full">
           <YouTubeEmbed
             videoid="ORvaAq1A-Ak"
             params={"controls=0&playsinline=1"}
-            style="margin-inline:auto;object-fit:cover"
+            style="margin-inline:auto;object-fit:cover;border-radius:1rem"
           />
         </div>
       </section>

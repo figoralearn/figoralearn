@@ -22,8 +22,8 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
     //   className={className}
     // >
     <svg
-      width="795"
-      height="677"
+      // width="795"
+      // height="677"
       preserveAspectRatio="xMidYMid meet"
       className={className}
       viewBox="0 0 795 677"

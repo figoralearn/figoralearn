@@ -3,6 +3,7 @@ import { DateTime } from 'luxon'; // Importing DateTime from luxon
 
 
 import { google } from 'googleapis';
+import { EnquiryFormData } from '@/app/api/enquire/route';
 
 export type FormDataType = {
   name?: string;
@@ -17,15 +18,15 @@ export type FormDataType = {
 };
 
 // Enquiry form specific type
-export type EnquiryFormDataType = {
-  parentName: string;
-  phoneNumber: string;
-  email: string;
-  city: string;
-  childBoard?: string;
-  childGrade?: string;
-  route?: string;
-};
+// export type EnquiryFormDataType = {
+//   parentName: string;
+//   phoneNumber: string;
+//   email: string;
+//   city: string;
+//   childBoard?: string;
+//   childGrade?: string;
+//   route?: string;
+// };
 
 // ✅ Always generates IST regardless of server's location
 
@@ -34,7 +35,7 @@ function getFormattedISTTimestamp(): string {
   return istTime.toFormat('dd-MM-yy, HH:mm'); // Added a space after the comma for better formatting
 }
 
-export async function appendEnquiryToGoogleSheet(enquiryData: EnquiryFormDataType) {
+export async function appendEnquiryToGoogleSheet(enquiryData: EnquiryFormData) {
   try {
     const auth = new google.auth.GoogleAuth({
       credentials: {
@@ -56,8 +57,8 @@ export async function appendEnquiryToGoogleSheet(enquiryData: EnquiryFormDataTyp
       enquiryData.email || '',
       enquiryData.phoneNumber || '',
       enquiryData.city || '',
-      enquiryData.childBoard || 'Not specified',
-      enquiryData.childGrade || 'Not specified',
+      enquiryData.childAge || 'Not specified',
+      enquiryData.preferredProgram || 'Not specified',
       enquiryData.route || 'Unknown',
       // 'Demo Booking',
       timestamp,

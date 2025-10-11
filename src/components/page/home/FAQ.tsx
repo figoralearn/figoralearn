@@ -45,7 +45,7 @@ export default function FAQ() {
   return (
     <section className="contain">
       <h2 className="">
-        Frequently asked <SpanPrimary>Questions</SpanPrimary>
+        Frequently Asked <SpanPrimary>Questions</SpanPrimary>
       </h2>
       <AnimatePresence>
         <div className="mt-sec-block grid grid-cols-1 gap-6 md:grid-cols-2">

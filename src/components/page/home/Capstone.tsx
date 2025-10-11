@@ -61,19 +61,19 @@ export default function Capstone() {
             </Card>
           ))}
         </div>
-        <div className="mt-sec-block w-7xl max-w-full overflow-hidden rounded-2xl">
+        <div className="mt-sec-block w-7xl max-w-full">
           <YouTubeEmbed
             videoid="Q8qOIhtvUSE"
             params={"controls=0&playsinline=1"}
-            style="margin-inline:auto;object-fit:cover;"
+            style="margin-inline:auto;object-fit:cover;border-radius:1rem"
           />
         </div>
       </section>
-      {/* <Marquee className="bg-accent mt-sec-block [--gap:3rem]">
+      <Marquee className="bg-accent mt-sec-block [--gap:3rem]">
         <p className="para">• Build Problem-Solving Skills</p>
         <p className="para">• Develop Creativity & Critical Thinking</p>
         <p className="para">• Grow as a Leader</p>
-      </Marquee> */}
+      </Marquee>
     </>
   );
 }

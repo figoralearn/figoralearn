@@ -42,7 +42,7 @@ export default function TestimonialSection() {
       <section className="contain gap-sec-block flex items-center justify-around max-lg:flex-col">
         <div>
           <h2 className="max-w-xl">
-            Hear it Straight from <SpanPrimary>Our Parents!</SpanPrimary>
+            Hear It Straight From <SpanPrimary>Our Parents!</SpanPrimary>
           </h2>
         </div>
         <Testimonials testimonials={testimonials} />

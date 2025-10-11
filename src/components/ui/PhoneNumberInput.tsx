@@ -17,7 +17,7 @@ export default function PhoneNumberInput({
   label = "Phone Number",
   placeholder = "Your contact number",
 }: PhoneNumberInputProps) {
-  const [selectedCountryCode, setSelectedCountryCode] = useState("+91");
+  const [selectedCountryCode, setSelectedCountryCode] = useState("91");
   const [Number, setNumber] = useState("");
 
   const handleCountryCodeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -51,7 +51,7 @@ export default function PhoneNumberInput({
           >
             {countryCodes.map((country) => (
               <option key={country.iso2} value={country.dialCode}>
-                ({country.dialCode}) {country.country}
+                (+{country.dialCode}) {country.country}
               </option>
             ))}
           </select>

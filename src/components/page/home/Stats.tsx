@@ -21,7 +21,7 @@ export default function Stats() {
     {
       quote: "#1",
       description:
-        "of kids in school today will work in jobs that don't even yet exist. The world is changing fast",
+        "on the list of skills that matter for employers are Critical Thinking, Problem Solving and Creativity",
     },
   ];
 
