@@ -1,3 +1,4 @@
+"use client";
 import HomeHero from "@/components/page/home/HeroHome";
 import "./styles.css";
 import Stats from "@/components/page/home/Stats";
@@ -9,20 +10,24 @@ import TestimonialSection from "@/components/page/home/TestimonialSection";
 import VidSection from "@/components/page/home/VidSection";
 import FAQ from "@/components/page/home/FAQ";
 import { redirect } from "next/navigation";
+import { useLayoutEffect } from "react";
 
 export default function Home() {
-  // return redirect("/compete");
-  return (
-    <>
-      <HomeHero />
-      <Stats />
-      <Capstone />
-      <Programs />
-      <Missions />
-      <Projects />
-      <TestimonialSection />
-      <VidSection />
-      <FAQ />
-    </>
-  );
+  // useLayoutEffect(() => {
+  //   redirect("/compete");
+  // }, []);
+  return <></>;
+  // return (
+  //   <>
+  //     <HomeHero />
+  //     <Stats />
+  //     <Capstone />
+  //     <Programs />
+  //     <Missions />
+  //     <Projects />
+  //     <TestimonialSection />
+  //     <VidSection />
+  //     <FAQ />
+  //   </>
+  // );
 }
