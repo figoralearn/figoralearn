@@ -9,18 +9,23 @@ import ArrowInCircle from "../icons/ArrowInCircle";
 import ReactLenis, { useLenis } from "lenis/react";
 import { useLocalLenis } from "@/hooks/useLocalLenis";
 
-type Testimonial = {
+export type TestimonialType = {
   title: string;
   quote: string;
   name: string;
   designation: string;
   src: string;
+
+  /**
+   * Indented to use for object positioning
+   */
+  imgClass?: string;
 };
 export const Testimonials = ({
   testimonials,
   autoplay = false,
 }: {
-  testimonials: Testimonial[];
+  testimonials: TestimonialType[];
   autoplay?: boolean;
 }) => {
   const [active, setActive] = useState(0);
@@ -85,7 +90,7 @@ export const Testimonials = ({
             <h2 className="text-3xl">{testimonial.title}</h2>
             <p
               ref={pRef}
-              className="lenis mt-3 max-h-[90%] overflow-hidden text-lg hover:overflow-y-scroll"
+              className="lenis mt-3 max-h-[90%] overflow-hidden text-lg"
               // onMouseEnter={() => {
               //   lenis?.;
               // }}
@@ -96,8 +101,13 @@ export const Testimonials = ({
 
             <div className="mt-auto flex items-center justify-between border-t-2 border-white py-2 pt-4">
               <div className="flex flex-col gap-2">
-                <div className="size-14 rounded-full bg-white">
-                  <Image src={testimonial.src} alt={testimonial.name} />
+                <div className="relative size-14 overflow-hidden rounded-full bg-white">
+                  <Image
+                    fill
+                    className={`object-cover object-center ${testimonial?.imgClass}`}
+                    src={testimonial.src}
+                    alt={testimonial.name}
+                  />
                 </div>
                 <div>
                   <p>{testimonial.name}</p>

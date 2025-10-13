@@ -21,24 +21,24 @@ interface Person {
 
 export const people: Person[] = [
   {
-    name: "John Doe",
-    company: "Company A",
-    image: "/img1.jpg",
+    name: "Dr. Prabhjot Sawhney",
+    company: "PhD, 10 years of experience in teaching & curriculum",
+    image: "/Prabhjot.png",
     color: "accent",
   },
   {
-    name: "Jane Smith",
-    company: "Company B",
-    image: "/img2.jpg",
+    name: "Khadijah Makani",
+    company:
+      "IB Facilitator - 13 years of experience\nKPMG & Cambridge certified instructor",
+    image: "/Khadijah.png",
     color: "primary",
   },
   {
-    name: "Alice Johnson",
-    company: "Company C",
-    image: "/img3.jpg",
+    name: "Ruchi Sood Bathla",
+    company: "IB Facilitator - 5 years of experience, PDGLT from IAAT",
+    image: "/Ruchi.png",
     color: "secondary",
   },
-  { name: "Bob Brown", company: "Company D", image: "/img4.jpg", color: "red" },
 ];
 export default function Facilitators() {
   return (
@@ -55,8 +55,8 @@ export default function Facilitators() {
             <div
               className={`bg-${person.color} flex size-60 flex-col items-center justify-center md:size-80`}
             >
-              <h3>{person.name}</h3>
-              <p>{person.company}</p>
+              <h3 className="text-center">{person.name}</h3>
+              <p className="text-center md:text-xl">{person.company}</p>
             </div>
           </div>
         ))}
