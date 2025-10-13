@@ -16,17 +16,17 @@ export const getLinks = (): LinkItem[] => {
       title: 'Home',
       link: '/',
     },
-    // {
-    //   title: 'Programs',
-    //   link: '/programs',
-    // },
+    {
+      title: 'Programs',
+      link: '/programs',
+    },
     {
       title: 'Compete',
       link: '/compete',
     },
-    // {
-    //   title: 'About',
-    //   link: '/about',
-    // },
+    {
+      title: 'About',
+      link: '/about',
+    },
   ];
 };
