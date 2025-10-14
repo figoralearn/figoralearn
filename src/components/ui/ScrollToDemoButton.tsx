@@ -57,7 +57,7 @@ export default function ScrollToDemoButton({
     </Link>
   ) : (
     <button
-      onClick={() => scrollToDemo(lenis, extraTopPadding)}
+      onClick={scrollToDemo(lenis, extraTopPadding)}
       className={combinedClassName}
     >
       {children}
