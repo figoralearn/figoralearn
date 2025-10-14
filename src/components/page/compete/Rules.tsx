@@ -37,7 +37,7 @@ export default function Rules() {
           data; blur faces in photos; no surveillance features.
         </li>
         <li>
-          Conduct – Harassment‑free, inclusive behaviour is mandatory. Be
+          Conduct – Harassment‑free, inclusive behavior is mandatory. Be
           respectful in all online spaces.
         </li>
         <li>
@@ -46,7 +46,7 @@ export default function Rules() {
           highlights and on our website.
         </li>
         <li>
-          Judging & Awards – Independent jury, decisions are final. We recognise
+          Judging & Awards – Independent jury, decisions are final. We recognize
           band‑wise winners and Top‑Performing Schools.
         </li>
       </ol>
