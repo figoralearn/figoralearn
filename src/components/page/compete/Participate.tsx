@@ -20,7 +20,7 @@ const items: Info[] = [
   },
   {
     title: "Teams",
-    desc: "2–4 students from the same school (Schools may field unlimited)",
+    desc: "2-3 students (register individually with the same team name)",
     icon: <Teams />,
   },
   { title: "Cost", desc: "Free to enter", icon: <Cost /> },

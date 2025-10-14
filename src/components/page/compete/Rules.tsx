@@ -12,10 +12,8 @@ export default function Rules() {
 
       <ol className="mt-sec-block2 space-y-sec-block2 para list-inside list-decimal">
         <li>
-          Eligibility & Teams – Grades 3–8; teams of 2–4 from the same school; a
-          student may join one team only. Students may enter from any country;
-          all materials must include an English version (subtitles or
-          translation acceptable).
+          teams of 2-3 from the same school; a student may join one team only.
+          Each participant must register individually with the same Team Name.
         </li>
         <li>
           Originality & Work Period – Submit new work created for this edition;

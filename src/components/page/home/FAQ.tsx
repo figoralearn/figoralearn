@@ -14,7 +14,7 @@ type Faq = {
 const faqs: Faq[] = [
   {
     id: 1,
-    q: "Who are the FIGORA course for?",
+    q: "Who are Figora programs designed for? ",
     a: "Learners who want to build real-world skills through hands-on missions and collaborative projects.",
   },
   {
@@ -36,6 +36,11 @@ const faqs: Faq[] = [
     id: 5,
     q: "Will my child get grades or report cards?",
     a: "We focus on growth and mastery. Learners receive actionable feedback and a portfolio of outcomes instead of grades.",
+  },
+  {
+    id: 6,
+    q: "What if my child doesn't like the program?",
+    a: "The Programs are designed to be highly engaging and fun. But, if it doesn’t turn out to be the right fit for your child, we will refund 100% of your money, no questions asked. So that you can sign up stress free.",
   },
 ];
 

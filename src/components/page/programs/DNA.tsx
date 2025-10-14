@@ -4,12 +4,16 @@ import Image from "next/image";
 
 const images = {
   g1: [
-    { src: "/dna-1.jpg", imgclass: "h-64!" },
-    { src: "/dna-2.jpg", imgclass: "" },
+    { src: "/dna-1.jpg", imgclass: "h-64!", img: "" },
+    { src: "/dna-2.jpg", imgclass: "", img: "" },
   ],
   g2: [
-    { src: "/dna-3.jpg", imgclass: "h-64!" },
-    { src: "/dna-4.jpg", imgclass: "" },
+    {
+      src: "/dna-3.jpg",
+      imgclass: "h-64!",
+      img: "[object-position:80%_50%]!",
+    },
+    { src: "/dna-4.jpg", imgclass: "", img: "" },
   ],
 };
 export default function DNA() {
@@ -36,7 +40,7 @@ export default function DNA() {
                   src={image.src}
                   fill
                   alt={image.imgclass}
-                  className={`object-cover object-center ${image.imgclass}`}
+                  className={`object-cover object-center ${image.img}`}
                 />
               </div>
             ))}
@@ -52,7 +56,7 @@ export default function DNA() {
                   src={image.src}
                   fill
                   alt={image.imgclass}
-                  className={`object-cover object-center`}
+                  className={`object-cover object-center ${image.img}`}
                 />
               </div>
             ))}

@@ -69,7 +69,7 @@ export default function Capstone() {
           />
         </div>
       </section>
-      <Marquee className="bg-accent mt-sec-block [--gap:3rem]">
+      <Marquee className="bg-accent mt-sec-block -rotate-2 [--gap:3rem]">
         <p className="para">• Build Problem-Solving Skills</p>
         <p className="para">• Develop Creativity & Critical Thinking</p>
         <p className="para">• Grow as a Leader</p>

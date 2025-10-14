@@ -30,7 +30,7 @@ const faqs: Faq[] = [
   {
     id: 4,
     q: "How should teams be formed?",
-    a: "Students should register in teams of 2 to 3, ideally from the same grade, to collaborate effectively across rounds. Each participant needs to register INDIVIDUALLY.",
+    a: "Students should register in teams of 2 to 3, ideally from the same grade, to collaborate effectively across rounds. Each participant needs to register INDIVIDUALLY and add the same Team Name in the form. ",
   },
   {
     id: 5,

@@ -16,7 +16,7 @@ const groups: Group[] = [
   {
     gradeRange: "Each child starts their own venture",
     label: "Capstone Project",
-    ico: <Tools />,
+    ico: <Tools className="text-primary size-20" />,
   }, // Updated img to ico
   {
     gradeRange: "Learn to pitch their venture at our Demo Day",
@@ -33,12 +33,6 @@ const groups: Group[] = [
 export default function EnCards() {
   return (
     <section className="contain">
-      <h2 className="text-center">
-        {/* The <SpanPrimary>Competition</SpanPrimary> participants
-        <br /> will be divided into <SpanPrimary>3 Groups:</SpanPrimary> */}
-        3 Age Buckets
-      </h2>
-
       <div className="mt-sec-block grid grid-cols-1 gap-6 md:grid-cols-3">
         {groups.map((g, idx) => (
           <Card

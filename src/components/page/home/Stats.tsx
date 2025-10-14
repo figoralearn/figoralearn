@@ -16,12 +16,12 @@ export default function Stats() {
     {
       quote: "65%",
       description:
-        "of kids in school today will work in jobs that don't even yet exist. The world is changing fast",
+        "of kids in school today will work in jobs that don't even yet exist. The world is changing fast \"",
     },
     {
       quote: "#1",
       description:
-        "on the list of skills that matter for employers are Critical Thinking, Problem Solving and Creativity",
+        'on the list of skills that matter for employers are Critical Thinking, Problem Solving and Creativity "',
     },
   ];
 
@@ -39,7 +39,8 @@ export default function Stats() {
                     <RQuot className="text-accent absolute -left-8" />
                     {stat.quote}
                   </span>{" "}
-                  <br /> <br /> {stat.description}
+                  <br /> <br />
+                  {stat.description}
                 </p>
               </InCard>
             </>

@@ -46,7 +46,7 @@ export default function Facilitators() {
       <h2 className="text-center">
         Meet our <SpanPrimary>Facilitators</SpanPrimary>
       </h2>
-      <Marquee className="mt-sec-block w-full [--gap:0.4rem]">
+      <Marquee className="mt-sec-block w-full [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)] [--gap:0.4rem]">
         {people.map((person) => (
           <div className="flex" key={person.name}>
             <div className="relative size-60 md:size-80">

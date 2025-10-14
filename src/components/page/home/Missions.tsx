@@ -25,7 +25,8 @@ export default function Missions() {
         <Card className="p-3" shadow="accent">
           <h3>
             Our Method combines <SpanPrimary>Case Based Learning</SpanPrimary>{" "}
-            (CBL) & Project Based Learning (PBL) Backed by research from
+            (CBL) & <SpanPrimary>Project Based Learning</SpanPrimary> (PBL)
+            Backed by research from
           </h3>
           <div className="mt-sec-block2 flex justify-center gap-7">
             {/* <img src="/HBS.png" alt="Harvard Business School" /> */}

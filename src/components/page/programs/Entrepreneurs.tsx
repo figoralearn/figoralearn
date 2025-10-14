@@ -34,10 +34,9 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
               </p>
             </div>
             <p className="mt-sec-block max-w-2xl">
-              A unique program where children Run a Country. Every session is a
-              live mission where kids step into the shoes of leaders and
-              decision-makers. They design systems, respond to crises, and make
-              tough choices about how to run a nation!
+              Every session is a live founder-challenge: kids tackle a different
+              step of the 0→1 journey by spotting problems testing ideas, and
+              building simple MVPs.
             </p>
             <p className="mt-sec-block2 max-w-2xl">
               So by the end they’ve experiences the complete Entrepreneurial
@@ -65,7 +64,7 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
               width={0}
               height={0}
               priority
-              className="h-auto w-full"
+              className="aspect-auto h-auto w-full"
             />
           </div>
         </div>

@@ -41,10 +41,10 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
               decision-makers. They design systems, respond to crises, and make
               tough choices about how to run a nation!
             </p>
-            <p className="mt-sec-block2 max-w-2xl">
+            {/* <p className="mt-sec-block2 max-w-2xl">
               So by the end they’ve experiences the complete Entrepreneurial
               Journey!
-            </p>
+            </p> */}
             {/* CTA */}
             {/* <Link
               role="button"

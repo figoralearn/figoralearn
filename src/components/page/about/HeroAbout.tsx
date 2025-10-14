@@ -1,5 +1,6 @@
 import RQuot from "@/components/icons/RQout";
 import CircleDoodle from "@/components/ui/CircleDoodle";
+import { Marquee } from "@/components/ui/marquee";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanUnderline from "@/components/ui/SpanUnderline";
 import Image from "next/image";
@@ -79,6 +80,7 @@ export default function HeroAbout() {
                   src={"/IITM.png"}
                   alt=""
                   unoptimized
+                  quality={90}
                   width={0}
                   height={0}
                   className={`h-auto w-auto`}
@@ -96,12 +98,12 @@ export default function HeroAbout() {
           </div>
         </div>
       </section>
-      <div className="mt-sec-block relative h-3">
-        <p className="bg-primary absolute left-1/2 flex w-[110%] origin-center! -translate-x-1/2 -rotate-1 justify-around py-2 text-white">
+      <Marquee className="mt-sec-block bg-primary -rotate-1 [--gap:4rem]">
+        <p>
           Our Mission is to Nurture Curious Agents with the Toolkit to Thrive in
           the World of Tomorrow
         </p>
-      </div>
+      </Marquee>
     </>
   );
 }
