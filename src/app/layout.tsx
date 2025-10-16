@@ -8,6 +8,8 @@ import { themeInitScript } from "@/lib/theme-script";
 import { cookies } from "next/headers";
 import { backgroundGen } from "@/utils/backgroundGen";
 import Footer from "@/components/shared/Footer";
+import Clarity from "@/components/Clarity";
+import GoogleAnalytics from "@/components/GA";
 
 const HeadingFont = League_Spartan({
   variable: "--font-league-spartan",
@@ -82,6 +84,8 @@ export default async function RootLayout({
         }}
         className={`${HeadingFont.variable} ${BodyFont.className} bg-neutral relative antialiased`}
       >
+        <Clarity />
+        <GoogleAnalytics />
         <Header />
         {/* <ThemeToggle /> */}
         <main>{children}</main>
