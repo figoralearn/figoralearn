@@ -32,8 +32,18 @@ export default function Footer() {
           <div className="flex flex-col items-end gap-2 text-right">
             <p>Become a part of Our Community</p>
             <div className="flex gap-1">
-              <Instagram />
-              <LinkedIn />
+              <Link
+                target="_blank"
+                href={"https://www.instagram.com/figoralearn/"}
+              >
+                <Instagram />
+              </Link>
+              <Link
+                target="_blank"
+                href={"https://www.linkedin.com/company/figora/"}
+              >
+                <LinkedIn />
+              </Link>
             </div>
           </div>
         </div>
