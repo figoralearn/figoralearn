@@ -22,7 +22,7 @@ export default function Mentors() {
       <Card className="contain bg-neutral py-3 text-center" shadow="accent">
         <Card className="p-3 px-10" shadow="accent">
           <h2>
-            Brand <SpanPrimary>Partners</SpanPrimary>
+            Backed by <SpanPrimary>Learnings</SpanPrimary> from
           </h2>
           <div className="mt-sec-block2 flex flex-wrap items-center justify-center gap-7">
             {companies.map((image) => (
