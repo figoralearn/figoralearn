@@ -6,7 +6,7 @@ interface Group1000002612Props {
   className?: string;
 }
 
-const Group1000002612: React.FC<Group1000002612Props> = ({
+const MissionSVG: React.FC<Group1000002612Props> = ({
   width = 795,
   height = 677,
   className,
@@ -38,6 +38,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
         <path
           d="M274 512.234C247.524 483.535 230.829 445.706 229.158 404H6C7.78068 507.286 49.4197 600.857 116.202 670L274 512.234Z"
           fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -52,6 +53,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
         <path
           d="M791 404.23H567.843C566.172 445.938 549.476 483.774 523 512.467L680.795 670.23C747.579 601.092 789.219 507.519 791 404.23Z"
           fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -66,6 +68,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
         <path
           d="M6 390H229.157C230.828 348.292 247.524 310.456 274 281.763L116.205 124C49.4208 193.138 7.78073 286.711 6 390Z"
           fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -80,6 +83,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
         <path
           d="M523 281.766C549.476 310.465 566.172 348.293 567.843 390H791C789.219 286.714 747.579 193.143 680.795 124L523 281.766Z"
           fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -93,7 +97,8 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
       <g filter="url(#filter4_d_1056_3684)">
         <path
           d="M282.766 272C311.465 245.623 349.293 228.99 391 227.326V5C287.714 6.77404 194.143 48.2577 125 114.791L282.766 272Z"
-          fill="#4FC9BD"
+          fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -108,6 +113,7 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
         <path
           d="M405.007 227.157C446.713 228.828 484.549 245.524 513.241 272L671 114.205C601.857 47.4209 508.286 5.78073 405 4V227.157H405.007Z"
           fill="white"
+          className="hover:fill-primary"
         />
       </g>
       <path
@@ -334,4 +340,4 @@ const Group1000002612: React.FC<Group1000002612Props> = ({
   );
 };
 
-export default Group1000002612;
+export default MissionSVG;

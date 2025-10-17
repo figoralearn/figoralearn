@@ -112,7 +112,7 @@ export default function HeroPrograms() {
                   router.push(`/programs?id=${card.id}`);
                 }
               }}
-              className={`${card.className} ${!card.comingSoon && "cursor-pointer"} relative h-72 w-full overflow-hidden p-3 text-left text-white md:max-w-96`}
+              className={`${card.className} ${!card.comingSoon && "cursor-pointer"} group relative h-72 w-full overflow-hidden p-3 text-left text-white md:max-w-96`}
             >
               <div className="relative z-10">
                 <h3 className="font-semibold">{card.title}</h3>
@@ -137,7 +137,7 @@ export default function HeroPrograms() {
                 alt={card.title}
                 width={0}
                 height={0}
-                className={`absolute right-0 bottom-0 h-auto w-auto ${card.comingSoon && "blur-[5px]"}`}
+                className={`absolute right-0 bottom-0 h-auto w-auto transition-[scale] duration-500 ${card.comingSoon ? "blur-[5px]" : "group-hover:scale-105"}`}
               />
             </Card>
           ))}

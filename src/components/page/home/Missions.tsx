@@ -1,4 +1,4 @@
-import Group1000002612 from "@/components/icons/Group1000002612";
+import MissionSVG from "@/components/icons/MissionSVG";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
@@ -16,7 +16,7 @@ export default function Missions() {
           Here’s why our Live Missions are a{" "}
           <SpanUnderline color="accent">Breakthrough</SpanUnderline>
         </p>
-        <Group1000002612 className="mt-sec-block w-full md:max-w-2xl" />
+        <MissionSVG className="mt-sec-block w-full md:max-w-2xl" />
       </section>
       <Card
         className="contain bg-neutral mt-sec-block p-3 text-center"

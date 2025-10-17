@@ -1,12 +1,10 @@
 "use client";
 
-// import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "motion/react";
 import Image from "next/image";
-
 import { RefObject, useEffect, useRef, useState } from "react";
 import ArrowInCircle from "../icons/ArrowInCircle";
-import ReactLenis, { useLenis } from "lenis/react";
+import { useLenis } from "lenis/react";
 import { useLocalLenis } from "@/hooks/useLocalLenis";
 
 export type TestimonialType = {
@@ -15,12 +13,9 @@ export type TestimonialType = {
   name: string;
   designation: string;
   src: string;
-
-  /**
-   * Indented to use for object positioning
-   */
   imgClass?: string;
 };
+
 export const Testimonials = ({
   testimonials,
   autoplay = false,
@@ -33,17 +28,16 @@ export const Testimonials = ({
   const pRef = useRef<HTMLParagraphElement>(null);
   useLocalLenis(pRef as RefObject<HTMLElement>);
 
-  const handleNext = () => {
+  // --- SWIPE STATE ---
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+  const [touchEndX, setTouchEndX] = useState<number | null>(null);
+
+  const handleNext = () =>
     setActive((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const handlePrev = () => {
+  const handlePrev = () =>
     setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
 
-  const isActive = (index: number) => {
-    return index === active;
-  };
+  const isActive = (index: number) => index === active;
 
   useEffect(() => {
     if (autoplay) {
@@ -52,11 +46,43 @@ export const Testimonials = ({
     }
   }, [autoplay]);
 
-  const randomRotateY = () => {
-    return Math.floor(Math.random() * 21) - 10;
+  const randomRotateY = () => Math.floor(Math.random() * 21) - 10;
+
+  // --- SWIPE HANDLERS ---
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.targetTouches[0].clientX);
   };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEndX(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStartX || !touchEndX) return;
+
+    const distance = touchStartX - touchEndX;
+    const swipeThreshold = 50; // px
+
+    if (distance > swipeThreshold) {
+      // Swiped left → next testimonial
+      handleNext();
+    } else if (distance < -swipeThreshold) {
+      // Swiped right → previous testimonial
+      handlePrev();
+    }
+
+    // Reset state
+    setTouchStartX(null);
+    setTouchEndX(null);
+  };
+
   return (
-    <div className="relative h-[30rem] w-sm max-w-full sm:w-md">
+    <div
+      className="relative h-[30rem] w-sm max-w-full overflow-visible select-none sm:w-md"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       <AnimatePresence>
         {testimonials.map((testimonial, index) => (
           <motion.div
@@ -91,10 +117,6 @@ export const Testimonials = ({
             <p
               ref={pRef}
               className="lenis mt-3 max-h-[90%] overflow-hidden text-lg"
-              // onMouseEnter={() => {
-              //   lenis?.;
-              // }}
-              // onMouseLeave={() => lenis?.}
             >
               {testimonial.quote}
             </p>
@@ -114,6 +136,7 @@ export const Testimonials = ({
                   <p className="text-sm">{testimonial.designation}</p>
                 </div>
               </div>
+
               <div className="flex items-center gap-2">
                 <ArrowInCircle
                   onClick={handlePrev}
@@ -122,14 +145,6 @@ export const Testimonials = ({
                 <ArrowInCircle className="size-10" onClick={handleNext} />
               </div>
             </div>
-            {/* <Image
-                    src={testimonial.src}
-                    alt={testimonial.name}
-                    width={500}
-                    height={500}
-                    draggable={false}
-                    className="h-full w-full rounded-3xl object-cover object-center"
-                  /> */}
           </motion.div>
         ))}
       </AnimatePresence>
