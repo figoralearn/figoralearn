@@ -1,6 +1,7 @@
 import Mentor from "@/components/icons/Mentor";
 import Speaker from "@/components/icons/Speaker";
 import Tools from "@/components/icons/Tools";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
@@ -32,7 +33,7 @@ const groups: Group[] = [
 
 export default function EnCards() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <div className="mt-sec-block grid grid-cols-1 gap-6 md:grid-cols-3">
         {groups.map((g, idx) => (
           <Card
@@ -46,6 +47,6 @@ export default function EnCards() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

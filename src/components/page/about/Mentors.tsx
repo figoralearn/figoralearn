@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
@@ -18,7 +19,7 @@ const companies = [
 
 export default function Mentors() {
   return (
-    <section>
+    <AnimatedSection>
       <Card className="contain bg-neutral py-3 text-center" shadow="accent">
         <Card className="p-3 px-10" shadow="accent">
           <h2>
@@ -39,6 +40,6 @@ export default function Mentors() {
           </div>
         </Card>
       </Card>
-    </section>
+    </AnimatedSection>
   );
 }

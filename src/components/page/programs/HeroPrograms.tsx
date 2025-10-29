@@ -9,6 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Entrepreneurs from "./Entrepreneurs";
 import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import FutureLeaders from "./FutureLeaders";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 type Card = {
   title: string;
@@ -90,7 +91,7 @@ export default function HeroPrograms() {
       <PopUp open={open} setOpen={setOpen} data={{}}>
         {openId}
       </PopUp>
-      <section className="flex flex-col items-center justify-center text-center max-md:mt-28 md:mt-20">
+      <AnimatedSection className="flex flex-col items-center justify-center text-center max-md:mt-28 md:mt-20">
         <h2 className="max-w-3xl">
           Our{" "}
           <SpanPrimary>
@@ -143,7 +144,7 @@ export default function HeroPrograms() {
           ))}
         </div>
         <ScrollToDemoButton className="mt-sec-block stagger [--i:5]" />
-      </section>
+      </AnimatedSection>
     </>
   );
 }

@@ -4,11 +4,12 @@ import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
 import Stanford from "@/assets/Stanford.png";
 import SpanUnderline from "@/components/ui/SpanUnderline";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function Missions() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center text-center">
+      <AnimatedSection className="flex flex-col items-center justify-center text-center">
         <h2 className="max-w-3xl">
           How Our <SpanPrimary>Missions</SpanPrimary> Work
         </h2>
@@ -17,7 +18,7 @@ export default function Missions() {
           <SpanUnderline color="accent">Breakthrough</SpanUnderline>
         </p>
         <MissionSVG className="mt-sec-block w-full md:max-w-2xl" />
-      </section>
+      </AnimatedSection>
       <Card
         className="contain bg-neutral mt-sec-block p-3 text-center"
         shadow="accent"

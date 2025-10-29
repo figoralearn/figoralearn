@@ -1,8 +1,9 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 
 export default function Why() {
   return (
-    <section>
+    <AnimatedSection>
       <h2 className="max-w-5xl">
         Why learning <SpanPrimary>Skills Matters:</SpanPrimary>
       </h2>
@@ -31,6 +32,6 @@ export default function Why() {
           others to create real solutions.
         </p>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

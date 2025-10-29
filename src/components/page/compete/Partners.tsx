@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
@@ -13,7 +14,7 @@ const companies = [
 ];
 export default function Partners() {
   return (
-    <section>
+    <AnimatedSection>
       <Card
         className="contain bg-neutral mt-sec-block py-3 text-center"
         shadow="accent"
@@ -37,6 +38,6 @@ export default function Partners() {
           </div>
         </Card>
       </Card>
-    </section>
+    </AnimatedSection>
   );
 }

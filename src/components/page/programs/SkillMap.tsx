@@ -7,6 +7,7 @@ import EQ from "@/components/icons/EQ";
 import Solving from "@/components/icons/Solving";
 import SysThinking from "@/components/icons/SysThinking";
 import Thinking from "@/components/icons/Thinking";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanUnderline from "@/components/ui/SpanUnderline";
@@ -51,7 +52,7 @@ const blocks: SkillBlock[] = [
 
 export default function SkillMap() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2 className="text-center">
         Our <SpanPrimary>Skill Map</SpanPrimary>
       </h2>
@@ -81,6 +82,6 @@ export default function SkillMap() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

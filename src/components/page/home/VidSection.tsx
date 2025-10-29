@@ -1,4 +1,5 @@
 import RQuot from "@/components/icons/RQout";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
@@ -18,7 +19,7 @@ const companies = [
 export default function VidSection() {
   return (
     <>
-      <section className="contain flex items-center justify-around max-lg:flex-col">
+      <AnimatedSection className="contain flex items-center justify-around max-lg:flex-col">
         <div>
           <h2 className="relative max-w-lg">
             Here’s What Our Wonderful <SpanPrimary>Learners</SpanPrimary> Think:
@@ -32,7 +33,7 @@ export default function VidSection() {
             style="margin-inline:auto;object-fit:cover;border-radius:1rem"
           />
         </div>
-      </section>
+      </AnimatedSection>
 
       <Card
         className="contain bg-neutral mt-sec-block py-3 text-center"

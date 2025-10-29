@@ -2,6 +2,7 @@ import Cost from "@/components/icons/Cost";
 import GlobeMap from "@/components/icons/GlobeMap";
 import Stairs from "@/components/icons/Stairs";
 import Teams from "@/components/icons/Teams";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import { ReactNode } from "react";
@@ -33,7 +34,7 @@ const items: Info[] = [
 
 export default function Participate() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2 className="text-center">
         Who can <SpanPrimary>Participate?</SpanPrimary>
       </h2>
@@ -53,6 +54,6 @@ export default function Participate() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

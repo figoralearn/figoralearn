@@ -1,4 +1,5 @@
 "use client";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanCircle from "@/components/ui/SpanCircle";
 import SpanPrimary from "@/components/ui/SpanPrimary";
@@ -64,7 +65,7 @@ type Card = {
 export default function Programs() {
   const router = useRouter();
   return (
-    <section className="flex flex-col items-center justify-center text-center">
+    <AnimatedSection className="flex flex-col items-center justify-center text-center">
       <h2 className="max-w-3xl">
         Our{" "}
         <SpanPrimary>
@@ -116,6 +117,6 @@ export default function Programs() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

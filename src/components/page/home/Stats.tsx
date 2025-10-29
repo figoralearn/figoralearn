@@ -1,5 +1,6 @@
 import RQuot from "@/components/icons/RQout";
 import WEF from "@/components/icons/WEF";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import { ReactNode } from "react";
 
@@ -26,7 +27,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="contain card bg-neutral shadow-accent mt-0 p-4 shadow">
+    <AnimatedSection className="contain card bg-neutral shadow-accent mt-0 p-4 shadow">
       <div className="flex flex-col">
         <WEF className="mx-auto mb-7 h-24 w-auto lg:hidden" />
         <div className="flex items-center justify-between gap-x-4">
@@ -47,6 +48,6 @@ export default function Stats() {
           ))}
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

@@ -1,4 +1,5 @@
 import RightArrowDoodle from "@/components/icons/RightArrowDoodle";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanSecondary from "@/components/ui/SpanSecondary";
 import SpanUnderline from "@/components/ui/SpanUnderline";
@@ -31,7 +32,7 @@ const images = [
 const changes = ["Think Memorize", "Create Imitate", "Lead Follow"];
 export default function Projects() {
   return (
-    <section className="bg-primary pt-sec-block pb-sec-block2 w-full max-w-[unset]">
+    <AnimatedSection className="bg-primary pt-sec-block pb-sec-block2 w-full max-w-[unset]">
       <div className="contain gap-sec-block flex justify-around max-lg:flex-col">
         <div className="flex max-w-2xl flex-col justify-center text-white">
           <h2>
@@ -97,6 +98,6 @@ export default function Projects() {
           );
         })}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

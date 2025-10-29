@@ -1,11 +1,12 @@
 import ArrowInCircle from "@/components/icons/ArrowInCircle";
 import RightArrowDoodle from "@/components/icons/RightArrowDoodle";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 
 export default function Rules() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2>
         Rules & <SpanPrimary>Guidelines</SpanPrimary>
       </h2>
@@ -59,6 +60,6 @@ export default function Rules() {
           Register Now
         </ScrollToDemoButton>{" "}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

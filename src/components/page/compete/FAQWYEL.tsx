@@ -4,6 +4,7 @@ import { useState } from "react";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import { AnimatePresence, motion } from "motion/react";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 type Faq = {
   id: number;
@@ -43,7 +44,7 @@ export default function FAQWYEL() {
   const [openId, setOpenId] = useState<number>();
 
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2 className="">
         Frequently asked <SpanPrimary>Questions</SpanPrimary>
       </h2>
@@ -100,6 +101,6 @@ export default function FAQWYEL() {
           })}
         </div>
       </AnimatePresence>
-    </section>
+    </AnimatedSection>
   );
 }

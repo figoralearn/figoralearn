@@ -7,6 +7,7 @@ import BrainBulb from "@/components/icons/BrainBulb";
 import { YouTubeEmbed } from "@next/third-parties/google";
 import { Marquee } from "@/components/ui/marquee";
 import Plus from "@/components/icons/Plus";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 type Card = {
   icon: React.ReactNode;
@@ -34,7 +35,7 @@ const cards: Card[] = [
 export default function Capstone() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center text-center">
+      <AnimatedSection className="flex flex-col items-center justify-center text-center">
         <h2 className="max-w-3xl">
           <SpanPrimary>Live</SpanPrimary>{" "}
           <span className="relative inline-block">
@@ -68,7 +69,7 @@ export default function Capstone() {
             style="margin-inline:auto;object-fit:cover;border-radius:1rem"
           />
         </div>
-      </section>
+      </AnimatedSection>
       <Marquee className="bg-accent mt-sec-block -rotate-1 [--gap:3rem]">
         <p className="para">• Build Problem-Solving Skills</p>
         <p className="para">• Develop Creativity & Critical Thinking</p>

@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import CircleDoodle from "@/components/ui/CircleDoodle";
 import { Marquee } from "@/components/ui/marquee";
@@ -8,7 +9,7 @@ import Link from "next/link";
 
 export default function HeroCompete() {
   return (
-    <section className="relative mt-0! flex h-[85vh] min-h-[750px] w-full max-w-[unset] flex-col p-[unset] md:min-h-[850px]">
+    <AnimatedSection className="relative mt-0! flex h-[85vh] min-h-[750px] w-full max-w-[unset] flex-col p-[unset] md:min-h-[850px]">
       <Image
         src={"/compete-hero.png"}
         fill
@@ -73,6 +74,6 @@ export default function HeroCompete() {
           Global Stage.
         </p>
       </div> */}
-    </section>
+    </AnimatedSection>
   );
 }

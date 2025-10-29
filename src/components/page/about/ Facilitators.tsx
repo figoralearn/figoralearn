@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import { Marquee } from "@/components/ui/marquee";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
@@ -42,7 +43,7 @@ export const people: Person[] = [
 ];
 export default function Facilitators() {
   return (
-    <section className="w-full">
+    <AnimatedSection className="w-full">
       <h2 className="text-center">
         Meet our <SpanPrimary>Facilitators</SpanPrimary>
       </h2>
@@ -61,6 +62,6 @@ export default function Facilitators() {
           </div>
         ))}
       </Marquee>
-    </section>
+    </AnimatedSection>
   );
 }

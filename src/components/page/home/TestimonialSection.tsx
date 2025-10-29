@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
 import { Testimonials, TestimonialType } from "@/components/ui/Testimonials";
@@ -39,14 +40,14 @@ const testimonials: TestimonialType[] = [
 export default function TestimonialSection() {
   return (
     <>
-      <section className="contain gap-sec-block flex items-center justify-around max-lg:flex-col">
+      <AnimatedSection className="contain gap-sec-block flex items-center justify-around max-lg:flex-col">
         <div>
           <h2 className="max-w-xl">
             Hear It Straight From <SpanPrimary>Our Parents!</SpanPrimary>
           </h2>
         </div>
         <Testimonials testimonials={testimonials} />
-      </section>
+      </AnimatedSection>
     </>
   );
 }

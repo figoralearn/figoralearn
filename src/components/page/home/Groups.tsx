@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import Image from "next/image";
@@ -16,7 +17,7 @@ const groups: Group[] = [
 
 export default function Groups() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2 className="text-center">
         {/* The <SpanPrimary>Competition</SpanPrimary> participants
         <br /> will be divided into <SpanPrimary>3 Groups:</SpanPrimary> */}
@@ -43,6 +44,6 @@ export default function Groups() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
@@ -11,7 +12,7 @@ const goals = [
 ];
 export default function ABT() {
   return (
-    <section className="contain text-center">
+    <AnimatedSection className="contain text-center">
       <h2>
         About the{" "}
         <SpanUnderline color="accent">
@@ -56,6 +57,6 @@ export default function ABT() {
           </div>
         </Card>
       </Card>
-    </section>
+    </AnimatedSection>
   );
 }

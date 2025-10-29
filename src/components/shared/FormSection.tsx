@@ -4,6 +4,7 @@ import SpanPrimary from "../ui/SpanPrimary";
 import { useState, ChangeEvent, FormEvent, ReactNode, useEffect } from "react";
 import SpanUnderline from "../ui/SpanUnderline";
 import PhoneNumberInput from "../ui/PhoneNumberInput";
+import AnimatedSection from "../ui/AnimatedSection";
 
 interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string;
@@ -174,7 +175,7 @@ export default function FormSection() {
   };
 
   return (
-    <section
+    <AnimatedSection
       id="demo"
       className="contain mt-section flex flex-col items-center md:scroll-mt-36"
     >
@@ -248,6 +249,6 @@ export default function FormSection() {
           {isSubmitting ? "Submitting..." : "Submit"}
         </button>
       </form>
-    </section>
+    </AnimatedSection>
   );
 }

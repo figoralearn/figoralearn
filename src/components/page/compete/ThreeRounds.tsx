@@ -1,3 +1,4 @@
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import Card from "@/components/ui/Card";
 import SpanPrimary from "@/components/ui/SpanPrimary";
 
@@ -37,7 +38,7 @@ const rounds: Round[] = [
 
 export default function ThreeRounds() {
   return (
-    <section className="contain">
+    <AnimatedSection className="contain">
       <h2 className="text-center">
         There are <SpanPrimary>3 Rounds</SpanPrimary>
       </h2>
@@ -68,6 +69,6 @@ export default function ThreeRounds() {
           </Card>
         ))}
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

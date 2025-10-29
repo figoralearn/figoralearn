@@ -1,6 +1,7 @@
 import SpanPrimary from "@/components/ui/SpanPrimary";
 import DNASVG from "./DNASVG";
 import Image from "next/image";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const images = {
   g1: [
@@ -18,7 +19,7 @@ const images = {
 };
 export default function DNA() {
   return (
-    <section className="flex flex-col items-center justify-center text-center">
+    <AnimatedSection className="flex flex-col items-center justify-center text-center">
       <h2 className="max-w-3xl">
         <SpanPrimary>Leadership DNA: </SpanPrimary>
         Our Core Values
@@ -63,6 +64,6 @@ export default function DNA() {
           </div>
         </div>
       </div>
-    </section>
+    </AnimatedSection>
   );
 }

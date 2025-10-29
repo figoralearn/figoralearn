@@ -10,6 +10,7 @@ import { MouseEventHandler } from "react";
 import EnJourneyMob from "./EnJourneyMob";
 import FLJourney from "./FLJourney";
 import FLJourneyMob from "./FLJourneyMob";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 
 interface EntrepreneursProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -18,7 +19,7 @@ interface EntrepreneursProps {
 export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
   return (
     <div className="pb-section">
-      <section className="contain flex min-h-[100svh] flex-col justify-center">
+      <AnimatedSection className="contain flex min-h-[100svh] flex-col justify-center">
         <div className="mt-0 flex justify-between">
           {/* Content */}
           <div className="fadein__right--stagger flex flex-col justify-center">
@@ -71,17 +72,17 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
             />
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       <EnCards />
-      <section className="mb-sec-block flex justify-center">
+      <AnimatedSection className="mb-sec-block flex justify-center">
         <div className="relative">
           <FLJourney className="hidden h-auto w-[140%] max-lg:-translate-x-16 md:block md:w-full" />
           <FLJourneyMob className="h-auto w-full md:hidden" />
         </div>
-      </section>
+      </AnimatedSection>
 
       {/* banner */}
-      <section>
+      <AnimatedSection>
         <Card
           className="contain bg-neutral mt-sec-block py-3 text-center"
           shadow="accent"
@@ -110,7 +111,7 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
             </Card>
           </Card>
         </Card>
-      </section>
+      </AnimatedSection>
     </div>
   );
 }

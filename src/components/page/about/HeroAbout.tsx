@@ -1,4 +1,5 @@
 import RQuot from "@/components/icons/RQout";
+import AnimatedSection from "@/components/ui/AnimatedSection";
 import CircleDoodle from "@/components/ui/CircleDoodle";
 import { Marquee } from "@/components/ui/marquee";
 import SpanPrimary from "@/components/ui/SpanPrimary";
@@ -9,7 +10,7 @@ import Link from "next/link";
 export default function HeroAbout() {
   return (
     <>
-      <section className="contain flex min-h-[100svh] flex-col justify-center">
+      <AnimatedSection className="contain flex min-h-[100svh] flex-col justify-center">
         <div className="gap-y-sec-block mt-64 flex justify-between max-xl:flex-col">
           {/* Content */}
           <div className="fadein__right--stagger flex flex-col justify-center gap-9">
@@ -97,7 +98,7 @@ export default function HeroAbout() {
             </div>
           </div>
         </div>
-      </section>
+      </AnimatedSection>
       <Marquee className="mt-sec-block bg-primary -rotate-1 [--gap:4rem]">
         <p>
           Our Mission is to Nurture Curious Agents with the Toolkit to Thrive in
