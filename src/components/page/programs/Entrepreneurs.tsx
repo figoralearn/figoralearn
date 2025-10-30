@@ -96,8 +96,10 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
             </p>
             <Card className="bg-primary flex min-w-fit gap-2 p-3">
               <div className="flex flex-col">
-                <s>₹ 24,000</s>
-                <GeotrackedPrice priceIN="20,000" priceUS="256" />
+                <s>
+                  <GeotrackedPrice priceIN="24,000" priceUS="550" />
+                </s>
+                <GeotrackedPrice priceIN="20,000" priceUS="450" />
               </div>
               <div
                 onClickCapture={() => {

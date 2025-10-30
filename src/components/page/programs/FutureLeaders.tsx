@@ -11,6 +11,7 @@ import EnJourneyMob from "./EnJourneyMob";
 import FLJourney from "./FLJourney";
 import FLJourneyMob from "./FLJourneyMob";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import GeotrackedPrice from "@/app/programs/GeotrackedPrice";
 
 interface EntrepreneursProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -98,8 +99,10 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
             </p>
             <Card className="bg-primary flex min-w-fit gap-2 p-3">
               <div className="flex flex-col">
-                <s>₹ 24,000</s>
-                <p>₹ 20,000</p>
+                <s>
+                  <GeotrackedPrice priceIN="24,000" priceUS="550" />
+                </s>
+                <GeotrackedPrice priceIN="20,000" priceUS="450" />
               </div>
               <div
                 onClickCapture={() => {
