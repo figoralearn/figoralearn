@@ -78,7 +78,7 @@ export default function Programs() {
         more.
       </p>
 
-      <div className="mt-sec-block flex w-full flex-wrap justify-center-safe gap-4">
+      <div className="mt-sec-block flex w-full flex-wrap justify-center gap-4">
         {cards.map((card, idx) => (
           <Card
             key={idx}
@@ -101,7 +101,7 @@ export default function Programs() {
                 alt={card.title}
                 width={0}
                 height={0}
-                className={`absolute right-0 bottom-0 z-20 h-auto w-[50%] origin-left -rotate-12`}
+                className={`absolute right-0 bottom-0 z-20 h-auto w-56 origin-left -rotate-12`}
               />
             )}
 

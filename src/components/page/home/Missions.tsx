@@ -23,7 +23,7 @@ export default function Missions() {
         className="contain bg-neutral mt-sec-block p-3 text-center"
         shadow="accent"
       >
-        <Card className="p-3" shadow="accent">
+        <Card className="p-3" shadow="accent" hover={false}>
           <h3>
             Our Method combines <SpanPrimary>Case Based Learning</SpanPrimary>{" "}
             (CBL) & <SpanPrimary>Project Based Learning</SpanPrimary> (PBL)

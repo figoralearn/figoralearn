@@ -39,7 +39,7 @@ export default function VidSection() {
         className="contain bg-neutral mt-sec-block py-3 text-center"
         shadow="accent"
       >
-        <Card className="p-3" shadow="accent">
+        <Card className="p-3" shadow="accent" hover={false}>
           <h3>
             Backed by <SpanPrimary>Learnings</SpanPrimary> from
           </h3>

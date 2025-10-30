@@ -40,7 +40,7 @@ export default function Capstone() {
           <SpanPrimary>Live</SpanPrimary>{" "}
           <span className="relative inline-block">
             Missions
-            <Plus />
+            <Plus className="animate-wiggle" />
           </span>{" "}
           <br /> Capstone <SpanPrimary>Projects</SpanPrimary>
         </h2>

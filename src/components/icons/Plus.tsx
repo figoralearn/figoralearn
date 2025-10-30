@@ -1,11 +1,11 @@
-export default function Plus() {
+export default function Plus({ className = "" }: { className?: string }) {
   return (
     <svg
       width="48"
       height="45"
       viewBox="0 0 48 45"
       fill="none"
-      className="absolute top-0 -right-2 translate-x-full"
+      className={`animate-wiggle absolute top-0 -right-2 translate-x-full duration-[1s] ${className}`}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

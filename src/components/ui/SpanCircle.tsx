@@ -11,7 +11,9 @@ export default function SpanCircle({
 }) {
   return (
     <span className="relative inline-block">
-      <Circleout className={color && `text-${color}`} />
+      <Circleout
+        className={`${color && `text-${color} animate-wiggle duration-[3s]`}`}
+      />
       {children}
     </span>
   );
