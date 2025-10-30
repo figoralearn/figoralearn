@@ -9,6 +9,7 @@ import ScrollToDemoButton from "@/components/ui/ScrollToDemoButton";
 import { MouseEventHandler } from "react";
 import EnJourneyMob from "./EnJourneyMob";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import GeotrackedPrice from "@/app/programs/GeotrackedPrice";
 
 interface EntrepreneursProps {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -96,7 +97,7 @@ export default function Entrepreneurs({ setOpen }: EntrepreneursProps) {
             <Card className="bg-primary flex min-w-fit gap-2 p-3">
               <div className="flex flex-col">
                 <s>₹ 24,000</s>
-                <p>₹ 20,000</p>
+                <GeotrackedPrice priceIN="20,000" priceUS="256" />
               </div>
               <div
                 onClickCapture={() => {
