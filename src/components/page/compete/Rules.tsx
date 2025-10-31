@@ -54,7 +54,7 @@ export default function Rules() {
 
       <div className="mt-sec-block flex w-full justify-center">
         <ScrollToDemoButton
-          href="https://unstop.com/competitions/1563749/register"
+          href="https://unstop.com/competitions/1569659/register"
           className="relative mx-auto mt-5 mb-12 border-2 border-white bg-[#a9d346] text-white"
         >
           Register Now

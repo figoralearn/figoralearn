@@ -147,7 +147,7 @@ export default function Header() {
           {/* CTA */}
           {path === "/compete" ? (
             <Link
-              href="https://unstop.com/competitions/1563749/register"
+              href="https://unstop.com/competitions/1569659/register"
               target="_blank"
               rel="noopener noreferrer"
               className={``}
@@ -231,7 +231,7 @@ export default function Header() {
           )}
           {path === "/compete" ? (
             <Link
-              href="https://unstop.com/competitions/1563749/register"
+              href="https://unstop.com/competitions/1569659/register"
               target="_blank"
               rel="noopener noreferrer"
               className={`button-secondary btn mobile_cta flex justify-center text-center`}
