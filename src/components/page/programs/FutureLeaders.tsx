@@ -28,7 +28,7 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
             <h1 className="stagger inline">
               <SpanPrimary>Future Leaders</SpanPrimary>
             </h1>
-            <p className="stagger head2">Age 8-14</p>
+            <p className="stagger head2">Ages 8 - 18</p>
             <div className="flex gap-2">
               <p className="border-accent shadow-accent inline rounded-full border bg-white px-3 text-xl shadow">
                 6 Months
@@ -60,10 +60,10 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
 
           {/* Hero Picture */}
           <div
-            className={`hero__image relative flex basis-[40%] max-xl:hidden`}
+            className={`hero__image relative flex shrink-0 basis-[40%] max-xl:hidden`}
           >
             <Image
-              src="/entrepreneurs-hero.png"
+              src="/fl-hero.png"
               alt="child in program"
               unoptimized
               width={0}
@@ -97,7 +97,7 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
               making decisions, handling crises, and negotiating on the global
               stage.”
             </p>
-            <Card className="bg-primary flex min-w-fit gap-2 p-3">
+            <Card className="bg-primary flex min-w-fit items-center gap-2 p-3">
               <div className="flex flex-col">
                 <s>
                   <GeotrackedPrice priceIN="24,000" priceUS="550" />
@@ -114,6 +114,24 @@ export default function FutureLeaders({ setOpen }: EntrepreneursProps) {
             </Card>
           </Card>
         </Card>
+      </AnimatedSection>
+      <AnimatedSection className="mt-sec-block flex justify-around gap-7 max-lg:flex-col max-lg:items-center">
+        <div className="relative h-96 w-full md:w-2xl">
+          <Image
+            alt="kids programme"
+            fill
+            src={"/fl-footer-1.png"}
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="relative h-96 w-full md:w-lg">
+          <Image
+            alt="kids programme"
+            fill
+            src={"/program-footer-2.png"}
+            className="object-contain object-center"
+          />
+        </div>
       </AnimatedSection>
     </div>
   );

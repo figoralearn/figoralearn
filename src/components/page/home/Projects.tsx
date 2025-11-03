@@ -90,7 +90,7 @@ export default function Projects() {
               <span className="inline-block text-white max-sm:w-12">
                 {arr[0]}
               </span>
-              <RightArrowDoodle className="max-md:size-10" />
+              <RightArrowDoodle className="animate-wiggle duration-[1.5s] max-md:size-10" />
               <span className="inline-block text-white max-sm:w-12">
                 {arr[1]}
               </span>

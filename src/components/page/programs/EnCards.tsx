@@ -33,8 +33,8 @@ const groups: Group[] = [
 
 export default function EnCards() {
   return (
-    <AnimatedSection className="contain">
-      <div className="mt-sec-block grid grid-cols-1 gap-6 md:grid-cols-3">
+    <AnimatedSection className="contain my-sec-block">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {groups.map((g, idx) => (
           <Card
             key={idx}

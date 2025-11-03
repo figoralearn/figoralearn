@@ -27,9 +27,9 @@ export default function HomeHero() {
             <br />
             <span className="text-primary"> Thinkers & Leaders.</span>
           </h1>
-          <p className="stagger max-w-2xl">
-            Weekly Missions on Real World Topics so that your child (Grade 3-8)
-            can learn Real World Skills
+          <p className="stagger max-w-[47rem]">
+            Weekly Missions on Real World Topics so that your child (Ages 8 -
+            18) can learn Real World Skills
           </p>
           {/* CTA */}
           <ScrollToDemoButton className="stagger [--i:5]" />

@@ -12,7 +12,7 @@ type AnimatedSectionProps = {
 
 const variants = {
   fadeUp: {
-    initial: { opacity: 0, y: 40 },
+    initial: { opacity: 0.1, y: 40 },
     animate: { opacity: 1, y: 0 },
   },
   fadeIn: {

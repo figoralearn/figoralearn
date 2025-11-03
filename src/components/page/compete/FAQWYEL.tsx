@@ -26,7 +26,7 @@ const faqs: Faq[] = [
   {
     id: 3,
     q: "What are the key dates for the 2025 competition?",
-    a: "Registration closes: 15th November 2025\nRound 1 - Quiz: 22nd to 29th November 2025\nRound 2 - Business Plan Submission: 11th to 20th December 2025\nRound 3 - Final Pitching Competition: 10th January 2026.",
+    a: "Registration closes: 15th November 2025.<br/>Round 1 - Quiz: 22nd to 29th November 2025.<br/>Round 2 - Business Plan Submission: 11th to 20th December 2025.<br/>Round 3 - Final Pitching Competition: 10th January 2026.",
   },
   {
     id: 4,
@@ -92,7 +92,10 @@ export default function FAQWYEL() {
                       id={`faq-panel-${item.id}`}
                       className="mt-sec-block2 h-fit"
                     >
-                      <p className={isOpen ? "text-white/90" : ""}>{item.a}</p>
+                      <p
+                        className={isOpen ? "text-white/90" : ""}
+                        dangerouslySetInnerHTML={{ __html: item.a }}
+                      ></p>
                     </motion.div>
                   )}
                 </AnimatePresence>

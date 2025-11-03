@@ -10,9 +10,9 @@ type Group = {
 };
 
 const groups: Group[] = [
-  { gradeRange: "3&4", label: "Explorer", img: "explorer.png" }, // Added img path
-  { gradeRange: "5&6", label: "Innovator", img: "innovator.png" }, // Added img path
-  { gradeRange: "7&8", label: "Trailblazer", img: "trailblazer.png" }, // Added img path
+  { gradeRange: "3-5", label: "Explorer", img: "explorer.png" },
+  { gradeRange: "6-8", label: "Innovator", img: "innovator.png" },
+  { gradeRange: "9-12", label: "Trailblazer", img: "trailblazer.png" },
 ];
 
 export default function Groups() {

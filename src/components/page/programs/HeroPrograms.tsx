@@ -127,7 +127,7 @@ export default function HeroPrograms() {
                   alt={card.title}
                   width={0}
                   height={0}
-                  className={`absolute right-0 bottom-0 z-20 h-auto origin-left -rotate-12`}
+                  className={`absolute right-0 bottom-0 z-20 h-auto w-56 origin-left -rotate-12`}
                 />
               )}
 
