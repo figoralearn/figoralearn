@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 export default function HomeHero() {
   return (
-    <AnimatedSection className="contain flex min-h-[100svh] flex-col justify-center">
+    <section className="contain flex min-h-[100svh] flex-col justify-center">
       <div className="flex justify-between">
         {/* Content */}
         <div className="fadein__right--stagger flex flex-col justify-center gap-9">
@@ -47,6 +47,6 @@ export default function HomeHero() {
           />
         </div>
       </div>
-    </AnimatedSection>
+    </section>
   );
 }

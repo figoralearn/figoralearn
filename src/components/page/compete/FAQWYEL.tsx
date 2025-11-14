@@ -26,7 +26,7 @@ const faqs: Faq[] = [
   {
     id: 3,
     q: "What are the key dates for the 2025 competition?",
-    a: "Registration closes: 15th November 2025.<br/>Round 1 - Quiz: 22nd to 29th November 2025.<br/>Round 2 - Business Plan Submission: 11th to 20th December 2025.<br/>Round 3 - Final Pitching Competition: 10th January 2026.",
+    a: "Registration closes: 30th November 2025<br/>Round 1 - Quiz: 1st to 8th December 2025<br/>Round 2 - Business Plan Submission: 13th Dec to 2nd January 2026<br/>Round 3 - Final Pitching Competition: 10th January 2026.",
   },
   {
     id: 4,

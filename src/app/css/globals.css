@@ -91,7 +91,7 @@
     @apply mt-0;
   }
   body section:first-of-type > :first-child {
-    @apply mt-28 md:mt-32;
+    @apply mt-28 animate-none md:mt-32;
   }
   section > p {
     @apply max-w-5xl;

@@ -16,7 +16,7 @@ type Info = {
 const items: Info[] = [
   {
     title: "Grades",
-    desc: "3–8 (Three judging bands: G3–4, G5–6, G7–8, Judge Separately)",
+    desc: "Grades 3-12 (Three judging bands, Judged separately)",
     icon: <Stairs />,
   },
   {

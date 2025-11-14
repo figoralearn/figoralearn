@@ -38,7 +38,7 @@ export default function AnimatedSection({
     <motion.section
       initial={initial}
       whileInView={animate}
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
         duration: 1.8,
         ease: [0.22, 1, 0.36, 1],
