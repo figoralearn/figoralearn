@@ -16,11 +16,11 @@ type Card = {
 
 const cards: Card[] = [
   {
-    icon: <Clock className="text-primary h-auto max-md:w-16" />,
+    icon: <Clock className="text-secondary h-auto max-md:w-16" />,
     title: "1 hour/week 3-6 Kids",
   },
   {
-    icon: <Globe className="text-yellow h-auto max-md:w-16" />,
+    icon: <Globe className="text-accent h-auto max-md:w-16" />,
     title: "Real World Problems",
   },
   {
@@ -28,7 +28,7 @@ const cards: Card[] = [
     title: "Hands-on Projects",
   },
   {
-    icon: <BrainBulb className="text-secondary h-auto max-md:w-16" />,
+    icon: <BrainBulb className="text-yellow h-auto max-md:w-16" />,
     title: "21st Century Skills",
   },
 ];

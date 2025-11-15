@@ -136,6 +136,7 @@ export default function HeroPrograms() {
                 src={card.imgSrc}
                 unoptimized
                 alt={card.title}
+                priority
                 width={0}
                 height={0}
                 className={`absolute right-0 bottom-0 h-auto w-auto transition-[scale] duration-500 ${card.comingSoon ? "blur-[5px]" : "group-hover:scale-105"}`}

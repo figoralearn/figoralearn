@@ -17,17 +17,17 @@ const groups: Group[] = [
   {
     gradeRange: "Each child starts their own venture",
     label: "Capstone Project",
-    ico: <Tools className="text-secondary size-20" />,
+    ico: <Tools className="text-red size-20" />,
   }, // Updated img to ico
   {
     gradeRange: "Learn to pitch their venture at our Demo Day",
     label: "Pitch to Real Founders",
-    ico: <Speaker className="text-primary" />,
+    ico: <Speaker className="text-accent" />,
   }, // Updated img to ico
   {
     gradeRange: "Top venture win a chance for incubation",
     label: "Incubation & Mentoring",
-    ico: <Mentor className="text-red" />,
+    ico: <Mentor className="text-secondary" />,
   }, // Updated img to ico
 ];
 
