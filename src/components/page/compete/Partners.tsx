@@ -4,13 +4,30 @@ import SpanPrimary from "@/components/ui/SpanPrimary";
 import SpanSecondary from "@/components/ui/SpanSecondary";
 import Image from "next/image";
 const companies = [
-  { src: "/partner-1.png", alt: "Harvard University", class: "" },
-  { src: "/partner-2.png", alt: "Harvard University", class: "" },
-  { src: "/partner-3.png", alt: "MIT", class: "w-20" },
-  { src: "/partner-4.png", alt: "Cambridge University", class: "" },
-  { src: "/partner-5.png", alt: "University of California", class: "" },
-  { src: "/partner-6.png", alt: "University of Oxford", class: "w-24" },
-  { src: "/partner-7.png", alt: "University of Oxford", class: "" },
+  {
+    src: "/partner-8.png",
+    alt: "Bluedart/DHL Logo",
+    class: "",
+  },
+  { src: "/partner-1.png", alt: "E-Cell IIT Madras logo", class: "" },
+  {
+    src: "/partner-2.png",
+    alt: "Emory University The Hatchery logo",
+    class: "",
+  },
+  {
+    src: "/partner-3.png",
+    alt: "DTU (Technical University of Denmark) logo",
+    class: "w-20",
+  },
+  { src: "/partner-4.png", alt: "DTU Skylab logo", class: "" },
+  { src: "/partner-5.png", alt: "EntreVC logo", class: "" },
+  { src: "/partner-6.png", alt: "IIM Ahmedabad logo", class: "w-24" },
+  {
+    src: "/partner-7.png",
+    alt: "Centre for Entrepreneurship Development logo",
+    class: "",
+  },
 ];
 export default function Partners() {
   return (
